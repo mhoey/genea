@@ -3,14 +3,14 @@
 import { createSVG, truncate } from '../utils/dom.js';
 import { formatNodeBirth, formatNodeDeath } from '../utils/date-format.js';
 
-const SEX_COLORS = {
+const GENDER_COLORS = {
   male: '#3b82f6',     // steel blue
   female: '#ec4899',   // terracotta/rose
   intersex: '#8b5cf6', // purple
   unknown: '#64748b'   // slate
 };
 
-const SEX_SYMBOLS = {
+const GENDER_SYMBOLS = {
   male: '♂',
   female: '♀',
   intersex: '⚥',
@@ -30,9 +30,9 @@ export function renderNodeCard(node, graphStore, options = {}) {
   const { person, x, y, width, height } = node;
   const isSelected = options.isSelected || false;
 
-  const sex = person.sex || 'unknown';
-  const accentColor = SEX_COLORS[sex] || SEX_COLORS.unknown;
-  const sexSymbol = SEX_SYMBOLS[sex] || '';
+  const gender = person.gender || person.sex || 'unknown';
+  const accentColor = GENDER_COLORS[gender] || GENDER_COLORS.unknown;
+  const genderSymbol = GENDER_SYMBOLS[gender] || '';
 
   const displayName = graphStore.getDisplayName(person);
   const birthStr = formatNodeBirth(person);
@@ -59,7 +59,7 @@ export function renderNodeCard(node, graphStore, options = {}) {
   });
   group.appendChild(bgRect);
 
-  // Left sex accent bar
+  // Left gender accent bar
   const accentBar = createSVG('rect', {
     class: 'node-accent-bar',
     x: 0,
@@ -80,16 +80,16 @@ export function renderNodeCard(node, graphStore, options = {}) {
   }, [truncate(displayName, 24)]);
   group.appendChild(nameText);
 
-  // Sex icon badge
-  if (sexSymbol) {
-    const sexText = createSVG('text', {
-      class: 'node-sex-badge',
+  // Gender icon badge
+  if (genderSymbol) {
+    const genderText = createSVG('text', {
+      class: 'node-gender-badge',
       x: width - 16,
       y: 26,
       'text-anchor': 'end',
       fill: accentColor
-    }, [sexSymbol]);
-    group.appendChild(sexText);
+    }, [genderSymbol]);
+    group.appendChild(genderText);
   }
 
   // Divider line

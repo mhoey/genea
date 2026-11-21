@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Genea — Interactive Genealogy Tree Viewer</title>
+  <title>Genea — Interaktiv slægtstræsvisning</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tree.css">
   <link rel="stylesheet" href="css/controls.css">
@@ -15,7 +15,7 @@
     <header class="app-header">
       <a href="#" class="brand">
         <span class="brand-icon">G</span>
-        <span>Genea Archive</span>
+        <span>Genea Arkiv</span>
       </a>
 
       <!-- Focus on Person Real-time Search -->
@@ -26,9 +26,9 @@
             type="search"
             id="focus-person-input"
             class="search-input"
-            placeholder="Focus on Person..."
+            placeholder="Fokusér på person..."
             autocomplete="off"
-            aria-label="Focus on person by name or ID"
+            aria-label="Fokusér på person efter navn"
           >
         </div>
         <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
@@ -36,17 +36,17 @@
 
       <!-- Header Actions: View Modes & Theme -->
       <div class="header-actions">
-        <div class="view-toggle" role="group" aria-label="View layout mode">
-          <button id="btn-view-hourglass" class="view-btn active" title="Hourglass lineage view">Hourglass</button>
-          <button id="btn-view-network" class="view-btn" title="All generations view">All Families</button>
+        <div class="view-toggle" role="group" aria-label="Visningstilstand">
+          <button id="btn-view-hourglass" class="view-btn active" title="Timeglas slægtsvisning">Timeglas</button>
+          <button id="btn-view-network" class="view-btn" title="Visning af alle generationer">Alle familier</button>
         </div>
-        <button id="btn-toggle-theme" class="btn-icon" title="Toggle dark/light theme" aria-label="Toggle theme">🌙</button>
+        <button id="btn-toggle-theme" class="btn-icon" title="Skift mørkt/lyst tema" aria-label="Skift tema">🌙</button>
       </div>
     </header>
 
     <!-- Main Interactive Tree Viewport -->
     <main class="viewport-container" id="viewport-container">
-      <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg" role="application" aria-label="Interactive family tree graph">
+      <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg" role="application" aria-label="Interaktivt slægtstræ">
         <defs>
           <filter id="node-glow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#3b82f6" flood-opacity="0.6"/>
@@ -59,46 +59,46 @@
       </svg>
 
       <!-- Synchronized Virtual Scrollbars -->
-      <div id="scrollbar-h" class="scrollbar-track scrollbar-h" aria-label="Horizontal scroll">
+      <div id="scrollbar-h" class="scrollbar-track scrollbar-h" aria-label="Vandret rulning">
         <div id="thumb-h" class="scrollbar-thumb"></div>
       </div>
-      <div id="scrollbar-v" class="scrollbar-track scrollbar-v" aria-label="Vertical scroll">
+      <div id="scrollbar-v" class="scrollbar-track scrollbar-v" aria-label="Lodret rulning">
         <div id="thumb-v" class="scrollbar-thumb"></div>
       </div>
 
       <!-- Minimap Radar Navigator -->
-      <div class="minimap-container" title="Minimap radar view">
+      <div class="minimap-container" title="Minikort">
         <canvas id="minimap-canvas" width="180" height="120"></canvas>
         <div id="minimap-viewport"></div>
       </div>
 
       <!-- Floating Controls Toolbar -->
-      <aside class="controls-toolbar" id="controls-toolbar" aria-label="Tree navigation controls">
+      <aside class="controls-toolbar" id="controls-toolbar" aria-label="Navigationsknapper">
         <!-- Directional Pan Buttons -->
         <div class="pan-grid">
           <div></div>
-          <button class="ctrl-btn" id="btn-pan-up" title="Pan Up" aria-label="Pan up">▲</button>
+          <button class="ctrl-btn" id="btn-pan-up" title="Panorér op" aria-label="Panorér op">▲</button>
           <div></div>
-          <button class="ctrl-btn" id="btn-pan-left" title="Pan Left" aria-label="Pan left">◀</button>
-          <button class="ctrl-btn" id="btn-pan-down" title="Pan Down" aria-label="Pan down">▼</button>
-          <button class="ctrl-btn" id="btn-pan-right" title="Pan Right" aria-label="Pan right">▶</button>
+          <button class="ctrl-btn" id="btn-pan-left" title="Panorér til venstre" aria-label="Panorér til venstre">◀</button>
+          <button class="ctrl-btn" id="btn-pan-down" title="Panorér ned" aria-label="Panorér ned">▼</button>
+          <button class="ctrl-btn" id="btn-pan-right" title="Panorér til højre" aria-label="Panorér til højre">▶</button>
         </div>
 
         <div class="controls-divider"></div>
 
         <!-- Zoom Controls -->
         <div class="controls-group">
-          <button class="ctrl-btn" id="btn-zoom-in" title="Zoom In (+20%)" aria-label="Zoom in">+</button>
-          <button class="ctrl-btn zoom-indicator-btn" id="btn-zoom-reset" title="Click to reset zoom to 100%">100%</button>
-          <button class="ctrl-btn" id="btn-zoom-out" title="Zoom Out (-20%)" aria-label="Zoom out">−</button>
+          <button class="ctrl-btn" id="btn-zoom-in" title="Zoom ind (+20%)" aria-label="Zoom ind">+</button>
+          <button class="ctrl-btn zoom-indicator-btn" id="btn-zoom-reset" title="Klik for at nulstille zoom til 100%">100%</button>
+          <button class="ctrl-btn" id="btn-zoom-out" title="Zoom ud (-20%)" aria-label="Zoom ud">−</button>
         </div>
 
         <div class="controls-divider"></div>
 
         <!-- Fit and Center Controls -->
         <div class="controls-group">
-          <button class="ctrl-btn" id="btn-fit-screen" title="Fit Entire Tree to Screen" aria-label="Fit to screen">⛶</button>
-          <button class="ctrl-btn" id="btn-center-selected" title="Center View on Selected Person" aria-label="Center on selected person">⌖</button>
+          <button class="ctrl-btn" id="btn-fit-screen" title="Tilpas hele træet til skærmen" aria-label="Tilpas til skærm">⛶</button>
+          <button class="ctrl-btn" id="btn-center-selected" title="Centrér visning på valgt person" aria-label="Centrér på valgt person">⌖</button>
         </div>
       </aside>
     </main>
@@ -109,39 +109,39 @@
     <div class="modal-content">
       <header class="modal-header">
         <div class="modal-title-group">
-          <h2 id="modal-person-name">Person Name</h2>
+          <h2 id="modal-person-name">Personnavn</h2>
           <div id="modal-badges-container"></div>
         </div>
-        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <button class="modal-close-btn" aria-label="Luk dialog">&times;</button>
       </header>
 
       <div class="modal-body">
         <!-- Demographics & Names -->
         <section class="modal-section">
-          <h3>Names & Identity</h3>
+          <h3>Navne og identitet</h3>
           <table class="details-table" id="modal-demographics-table"></table>
         </section>
 
         <!-- Life Events Timeline -->
         <section class="modal-section">
-          <h3>Life Events Timeline</h3>
+          <h3>Tidslinje over livsbegivenheder</h3>
           <ol class="events-timeline" id="modal-events-timeline"></ol>
         </section>
 
         <!-- Family Relationships -->
         <section class="modal-section">
-          <h3>Family Relationships</h3>
+          <h3>Familierelationer</h3>
           <div class="relations-grid">
             <div class="relation-card">
-              <h4>Parents</h4>
+              <h4>Forældre</h4>
               <ul id="modal-parents-list"></ul>
             </div>
             <div class="relation-card">
-              <h4>Spouses & Partners</h4>
+              <h4>Ægtefæller og partnere</h4>
               <ul id="modal-spouses-list"></ul>
             </div>
             <div class="relation-card">
-              <h4>Children</h4>
+              <h4>Børn</h4>
               <ul id="modal-children-list"></ul>
             </div>
           </div>
@@ -149,15 +149,15 @@
 
         <!-- Notes & Sources -->
         <section class="modal-section">
-          <h3>Notes & Sources</h3>
+          <h3>Noter og kilder</h3>
           <div id="modal-notes" class="modal-notes"></div>
           <ul id="modal-sources-list" class="sources-list"></ul>
         </section>
       </div>
 
       <footer class="modal-footer">
-        <button class="btn btn-primary" id="btn-center-tree">Center in Tree</button>
-        <button class="btn btn-secondary" id="btn-close-modal">Close</button>
+        <button class="btn btn-primary" id="btn-center-tree">Centrér i træ</button>
+        <button class="btn btn-secondary" id="btn-close-modal">Luk</button>
       </footer>
     </div>
   </dialog>

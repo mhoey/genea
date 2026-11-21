@@ -9,7 +9,7 @@
           "display": "Anders Christian Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -91,7 +91,7 @@
           "display": "Andrea Kirstine Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -171,7 +171,7 @@
           "display": "Andreas Christian Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -237,7 +237,7 @@
           "display": "Andreas Kristian Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -299,7 +299,7 @@
           "display": "Ane Kirstine Christensen Legaard"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -361,7 +361,7 @@
           "display": "Ane Ladegaard Christensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -404,7 +404,7 @@
           "display": "Anna Dorthea Marie Markussen Linnet"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -506,7 +506,7 @@
           "display": "Anna Hedvig Linnet Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -580,7 +580,7 @@
           "display": "Anna Maria Henriksen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -660,7 +660,7 @@
           "display": "Annette Linnet Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -712,7 +712,7 @@
           "display": "Arne Thellefsen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -776,7 +776,7 @@
           "display": "Barbara Kirstine Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -836,7 +836,7 @@
           "display": "Bent Linnet Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -916,7 +916,7 @@
           "display": "Bertel Hansen Bjerrisgaard"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -946,7 +946,7 @@
           "display": "Berteline Kirstine Hansen Bjerrisgaard"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -986,7 +986,7 @@
           "display": "Birgit Høy Johannesen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1080,7 +1080,7 @@
           "display": "Birgitte Christensdatter (Christensen)"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1162,7 +1162,7 @@
           "display": "Birgitte Henriksen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1216,7 +1216,7 @@
           "display": "Birthe Marie Chathrine Christensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1282,7 +1282,7 @@
           "display": "Bjarne Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -1322,7 +1322,7 @@
           "display": "Bjarne Rosendal Borch"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -1374,7 +1374,7 @@
           "display": "Bodil Marie Jørgensen)"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1424,7 +1424,7 @@
           "display": "Bodil Thellefsen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -1532,7 +1532,7 @@
           "display": "Carl Lisby Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -1580,7 +1580,7 @@
           "display": "Christen Christensen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1622,7 +1622,7 @@
           "display": "Christen Henriksen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1676,7 +1676,7 @@
           "display": "Christen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1718,7 +1718,7 @@
           "display": "Christen Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1780,7 +1780,7 @@
           "display": "Christen Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1834,7 +1834,7 @@
           "display": "Christen Thomsen Christensen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -1933,7 +1933,7 @@
           "display": "Christian Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -1959,7 +1959,7 @@
           "display": "Christopher Thyregod Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -2007,7 +2007,7 @@
           "display": "Cisillie Bolette Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2087,7 +2087,7 @@
           "display": "Connie Mollerup"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -2155,7 +2155,7 @@
           "display": "Eline Kirstine Marie Haahr"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2219,7 +2219,7 @@
           "display": "Elizabeth Lauritsdatter"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2251,7 +2251,7 @@
           "display": "Elizabeth Pedersen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2331,7 +2331,7 @@
           "display": "Elsa Larsen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -2402,7 +2402,7 @@
           "display": "Else Katrine Jørgensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2444,7 +2444,7 @@
           "display": "En Søn"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -2492,7 +2492,7 @@
           "display": "Frederik Ditlefsen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -2524,7 +2524,7 @@
           "display": "Grethe Christensen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2560,7 +2560,7 @@
           "display": "Gustav Lisby Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -2608,7 +2608,7 @@
           "display": "Hans Christensen Haar"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -2678,7 +2678,7 @@
           "display": "Hans Peder Kristensen Thing"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -2744,7 +2744,7 @@
           "display": "Hans Thomsen Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -2810,7 +2810,7 @@
           "display": "Hansigne Johanne Sophie Christensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2925,7 +2925,7 @@
           "display": "Hansigne Nikoline Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -2991,7 +2991,7 @@
           "display": "Helle Thyregod"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -3021,7 +3021,7 @@
           "display": "Henning Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3071,7 +3071,7 @@
           "display": "Henrik Christensen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3149,7 +3149,7 @@
           "display": "Henrik Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3263,7 +3263,7 @@
           "display": "Inge Jensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -3329,7 +3329,7 @@
           "display": "Irma Julie Erngot Thellefsen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -3393,7 +3393,7 @@
           "display": "Jacob Borch"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -3437,7 +3437,7 @@
           "display": "Jane Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -3515,7 +3515,7 @@
           "display": "Jens Arne Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -3563,7 +3563,7 @@
           "display": "Jens Henrik Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3674,7 +3674,7 @@
           "display": "Jens Henriksen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3744,7 +3744,7 @@
           "display": "Jens Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3858,7 +3858,7 @@
           "display": "Jens Jakob Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -3954,7 +3954,7 @@
           "display": "Jens Mollerup Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -4008,7 +4008,7 @@
           "display": "Jens Simon Henriksen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4050,7 +4050,7 @@
           "display": "Jørgen Christensen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4096,7 +4096,7 @@
           "display": "Jørgen Fogt"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -4142,7 +4142,7 @@
           "display": "Johanne Bolette Luise Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -4224,7 +4224,7 @@
           "display": "Johanne Botilde Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -4304,7 +4304,7 @@
           "display": "Johannes Johannesen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4332,7 +4332,7 @@
           "display": "Karen Thøstesen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -4394,7 +4394,7 @@
           "display": "Keld Lisby Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -4444,7 +4444,7 @@
           "display": "Kirsten Høy Johannesen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -4516,7 +4516,7 @@
           "display": "Kirstine Sørensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [],
       "familyIdsAsSpouse": [
@@ -4533,7 +4533,7 @@
           "display": "Knud Nielsen Jørgensen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4575,7 +4575,7 @@
           "display": "Kristian Anton Martinus Larsen (senere Rotbøl)"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [],
       "familyIdsAsSpouse": [
@@ -4592,7 +4592,7 @@
           "display": "Kristian Ditlefsen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4624,7 +4624,7 @@
           "display": "Kristian Peder Thomsen Thing"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4680,7 +4680,7 @@
           "display": "Lars Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4779,7 +4779,7 @@
           "display": "Laurids Anton Marinus Rotbøl (døbt Larsen)"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -4845,7 +4845,7 @@
           "display": "Lise Mortensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -4879,7 +4879,7 @@
           "display": "Lovise Auguste Johanne Dehn"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -4951,7 +4951,7 @@
           "display": "Magda Haahr"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5017,7 +5017,7 @@
           "display": "Maja Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -5049,7 +5049,7 @@
           "display": "Maren Kirstine Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5109,7 +5109,7 @@
           "display": "Maren Maria Mørk"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5141,7 +5141,7 @@
           "display": "Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5179,7 +5179,7 @@
           "display": "Margrethe Pedersen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5275,7 +5275,7 @@
           "display": "Marianne"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -5311,7 +5311,7 @@
           "display": "Marie Birgitte Kristensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5365,7 +5365,7 @@
           "display": "Marie Dorthea Højfeldt Christensen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5413,7 +5413,7 @@
           "display": "Marie Jensdatter"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5467,7 +5467,7 @@
           "display": "Marie Kirstine Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5581,7 +5581,7 @@
           "display": "Mette Bjerremose (Rasmussen)"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5643,7 +5643,7 @@
           "display": "Mette Marie Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5698,7 +5698,7 @@
           "display": "Mette Marie Pedersdatter"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5742,7 +5742,7 @@
           "display": "Mette Marie Pedersen Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -5796,7 +5796,7 @@
           "display": "Mette Mollerup Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -5860,7 +5860,7 @@
           "display": "Michael Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -5906,7 +5906,7 @@
           "display": "Morten Thellefsen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -5978,7 +5978,7 @@
           "display": "Niels Christensen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6040,7 +6040,7 @@
           "display": "Niels Henriksen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6078,7 +6078,7 @@
           "display": "Niels Linnet Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -6160,7 +6160,7 @@
           "display": "Niels Markussen Linnet"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6210,7 +6210,7 @@
           "display": "Otto Marencius Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6260,7 +6260,7 @@
           "display": "Peder Christen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6322,7 +6322,7 @@
           "display": "Peder Christensen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6366,7 +6366,7 @@
           "display": "Peder Christian Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6419,7 +6419,7 @@
           "display": "Peder Henrichen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6527,7 +6527,7 @@
           "display": "Peder Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6587,7 +6587,7 @@
           "display": "Peder Kristian Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6695,7 +6695,7 @@
           "display": "Peder Kristian Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6743,7 +6743,7 @@
           "display": "Peder M. Pedersen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6797,7 +6797,7 @@
           "display": "Peder Martinsen Haahr"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6845,7 +6845,7 @@
           "display": "Peder Viggo Haahr"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6893,7 +6893,7 @@
           "display": "Peter Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -6987,7 +6987,7 @@
           "display": "Peter Linnet Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -7019,7 +7019,7 @@
           "display": "Philip Thyregod Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -7067,7 +7067,7 @@
           "display": "Sille Pedersdatter (Cicile Pedersen)"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -7150,7 +7150,7 @@
           "display": "Søren Christian Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -7198,7 +7198,7 @@
           "display": "Søren Peter Hansen Haahr"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -7248,7 +7248,7 @@
           "display": "Sophie Hansen"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": true,
       "events": [
         {
@@ -7280,7 +7280,7 @@
           "display": "Sophie Linnet Høy"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {
@@ -7378,7 +7378,7 @@
           "display": "Svend Erik Mørk Johannesen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": false,
       "events": [
         {
@@ -7488,7 +7488,7 @@
           "display": "Svend Hansen"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -7546,7 +7546,7 @@
           "display": "Torben Thellefsen Høy"
         }
       ],
-      "sex": "male",
+      "gender": "male",
       "living": true,
       "events": [
         {
@@ -7628,7 +7628,7 @@
           "display": "Valborg Møller"
         }
       ],
-      "sex": "female",
+      "gender": "female",
       "living": false,
       "events": [
         {

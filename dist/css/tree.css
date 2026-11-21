@@ -69,6 +69,7 @@
   user-select: none;
 }
 
+.node-gender-badge,
 .node-sex-badge {
   font-family: var(--font-sans);
   font-size: 14px;
