@@ -6,7 +6,7 @@ import (
 )
 
 func TestDataDirectoryIntegrity(t *testing.T) {
-	dataPath := filepath.Join("..", "..", "data")
+	dataPath := filepath.Join("..", "..", "test_data")
 	store, err := NewFSStore(dataPath)
 	if err != nil {
 		t.Fatalf("failed to create FSStore: %v", err)

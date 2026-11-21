@@ -1,0 +1,30 @@
+{
+  "id": "f_hoey_legaard",
+  "partnerIds": [
+    "p_lars_pedersen_hoey",
+    "p_ane_kirstine_christensen_legaard"
+  ],
+  "children": [
+    {
+      "personId": "p_peder_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_peder_kristian_hoey_164",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_barbara_kirstine_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_mette_marie_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_otto_marencius_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

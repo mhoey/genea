@@ -1,0 +1,30 @@
+{
+  "id": "f_hoey_jensdatter",
+  "partnerIds": [
+    "p_christen_hoey",
+    "p_marie_jensdatter"
+  ],
+  "children": [
+    {
+      "personId": "p_peder_christensen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_grethe_christensen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_henrik_christensen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_joergen_christensen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_niels_christensen_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

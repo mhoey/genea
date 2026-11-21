@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_larsen",
+  "partnerIds": [
+    "p_jens_hoey",
+    "p_elsa_larsen"
+  ],
+  "children": [
+    {
+      "personId": "p_bjarne_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_michael_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

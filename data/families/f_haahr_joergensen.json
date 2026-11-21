@@ -1,0 +1,18 @@
+{
+  "id": "f_haahr_joergensen",
+  "partnerIds": [
+    "p_soeren_peter_hansen_haahr",
+    "p_bodil_marie_joergensen"
+  ],
+  "children": [
+    {
+      "personId": "p_magda_haahr",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_peder_viggo_haahr",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

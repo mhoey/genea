@@ -1,0 +1,18 @@
+{
+  "id": "f_hansen_marianne",
+  "partnerIds": [
+    "p_svend_hansen",
+    "p_marianne"
+  ],
+  "children": [
+    {
+      "personId": "p_christian_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_sophie_hansen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

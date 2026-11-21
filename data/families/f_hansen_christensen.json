@@ -1,0 +1,26 @@
+{
+  "id": "f_hansen_christensen",
+  "partnerIds": [
+    "p_anders_christian_hansen",
+    "p_hansigne_johanne_sophie_christensen"
+  ],
+  "children": [
+    {
+      "personId": "p_cisillie_bolette_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_hans_thomsen_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_johanne_botilde_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_andrea_kirstine_hansen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

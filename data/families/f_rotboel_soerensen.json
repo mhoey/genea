@@ -1,0 +1,14 @@
+{
+  "id": "f_rotboel_soerensen",
+  "partnerIds": [
+    "p_kristian_anton_martinus_larsen_senere_rotboel",
+    "p_kirstine_soerensen"
+  ],
+  "children": [
+    {
+      "personId": "p_laurids_anton_marinus_rotboel_doebt_larsen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

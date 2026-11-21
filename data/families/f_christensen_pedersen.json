@@ -1,0 +1,18 @@
+{
+  "id": "f_christensen_pedersen",
+  "partnerIds": [
+    "p_christen_thomsen_christensen",
+    "p_sille_pedersdatter_cicile_pedersen"
+  ],
+  "children": [
+    {
+      "personId": "p_hansigne_johanne_sophie_christensen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_hans_peder_kristensen_thing",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

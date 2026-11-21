@@ -1,0 +1,18 @@
+{
+  "id": "f_hansen_johannesen",
+  "partnerIds": [
+    "p_peter_hansen",
+    "p_kirsten_hoey_johannesen"
+  ],
+  "children": [
+    {
+      "personId": "p_jane_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_svend_hansen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "f_hoey_christensen_63",
+  "partnerIds": [
+    "p_henrik_pedersen_hoey",
+    "p_birgitte_christensdatter_christensen"
+  ],
+  "children": [
+    {
+      "personId": "p_christen_pedersen_hoey_170",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_peder_m_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_mette_marie_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

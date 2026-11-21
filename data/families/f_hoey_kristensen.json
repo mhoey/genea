@@ -1,0 +1,14 @@
+{
+  "id": "f_hoey_kristensen",
+  "partnerIds": [
+    "p_christen_pedersen_hoey",
+    "p_marie_birgitte_kristensen"
+  ],
+  "children": [
+    {
+      "personId": "p_peder_christen_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

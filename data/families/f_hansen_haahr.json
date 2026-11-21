@@ -1,0 +1,18 @@
+{
+  "id": "f_hansen_haahr",
+  "partnerIds": [
+    "p_hans_thomsen_hansen",
+    "p_magda_haahr"
+  ],
+  "children": [
+    {
+      "personId": "p_soeren_christian_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_jens_arne_hansen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

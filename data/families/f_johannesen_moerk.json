@@ -1,0 +1,14 @@
+{
+  "id": "f_johannesen_moerk",
+  "partnerIds": [
+    "p_johannes_johannesen",
+    "p_maren_maria_moerk"
+  ],
+  "children": [
+    {
+      "personId": "p_svend_erik_moerk_johannesen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

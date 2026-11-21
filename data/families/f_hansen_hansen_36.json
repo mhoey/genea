@@ -1,0 +1,14 @@
+{
+  "id": "f_hansen_hansen_36",
+  "partnerIds": [
+    "p_andreas_christian_hansen",
+    "p_hansigne_nikoline_hansen"
+  ],
+  "children": [
+    {
+      "personId": "p_irma_julie_erngot_thellefsen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

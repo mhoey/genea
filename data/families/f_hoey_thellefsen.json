@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_thellefsen",
+  "partnerIds": [
+    "p_bent_linnet_hoey",
+    "p_bodil_thellefsen"
+  ],
+  "children": [
+    {
+      "personId": "p_torben_thellefsen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_morten_thellefsen_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

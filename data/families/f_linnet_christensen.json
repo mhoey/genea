@@ -1,0 +1,14 @@
+{
+  "id": "f_linnet_christensen",
+  "partnerIds": [
+    "p_niels_markussen_linnet",
+    "p_ane_ladegaard_christensen"
+  ],
+  "children": [
+    {
+      "personId": "p_anna_dorthea_marie_markussen_linnet",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

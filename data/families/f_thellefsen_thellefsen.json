@@ -1,0 +1,14 @@
+{
+  "id": "f_thellefsen_thellefsen",
+  "partnerIds": [
+    "p_arne_thellefsen",
+    "p_irma_julie_erngot_thellefsen"
+  ],
+  "children": [
+    {
+      "personId": "p_bodil_thellefsen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

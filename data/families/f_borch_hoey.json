@@ -1,0 +1,14 @@
+{
+  "id": "f_borch_hoey",
+  "partnerIds": [
+    "p_bjarne_rosendal_borch",
+    "p_annette_linnet_hoey"
+  ],
+  "children": [
+    {
+      "personId": "p_jacob_borch",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

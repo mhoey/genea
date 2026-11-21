@@ -4,9 +4,10 @@
 A local-first genealogy system backed by a private Git repository of structured JSON records, paired with a Go core engine for validation, mutations, and static site generation.
 
 * **Longevity over framework churn:** Favor Go standard library tooling, plain JSON data files, and static HTML/CSS/JS output with minimal client-side interaction so the archive remains readable and buildable over decades.
-* **Two operational modes:**
-  * **Local Studio (`localhost`):** Supports reading, adding/updating records and relations, validating graph integrity, committing to Git, and building the static site.
-  * **Hosted Static Viewer (Future):** Purely read-only static files (HTML, CSS, JS, JSON bundle) deployable to any static host with zero runtime backend or write auth.
+* **No web server:** The application does not expose a web server. Since genealogy data is non-volatile, future versions will use static site generation to produce a static site.
+* **Operational modes:**
+  * **Core CLI:** Supports reading archive data, adding/updating records and relations, and validating graph integrity directly against data files.
+  * **Static Site Generation (Future):** Purely read-only static files (HTML, CSS, JS, JSON bundle) deployable to any static host with zero runtime backend or server processes.
 
 ---
 
@@ -18,3 +19,4 @@ data/
 ├── people/     # p_<id>.json
 ├── families/   # f_<id>.json
 └── sources/    # s_<id>.json
+```

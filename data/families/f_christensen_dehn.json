@@ -1,0 +1,14 @@
+{
+  "id": "f_christensen_dehn",
+  "partnerIds": [
+    "p_christen_christensen",
+    "p_lovise_auguste_johanne_dehn"
+  ],
+  "children": [
+    {
+      "personId": "p_christen_thomsen_christensen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

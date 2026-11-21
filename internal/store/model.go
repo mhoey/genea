@@ -67,6 +67,13 @@ const (
 	EventResidence = LifeEventResidence
 )
 
+type RelationType string
+
+const (
+	RelSpouse RelationType = "spouse"
+	RelChild  RelationType = "child"
+)
+
 type LifeEvent struct {
 	ID          string        `json:"id"`
 	Type        LifeEventType `json:"type"` // birth, marriage, death, residence, etc.

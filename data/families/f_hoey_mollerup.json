@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_mollerup",
+  "partnerIds": [
+    "p_torben_thellefsen_hoey",
+    "p_connie_mollerup"
+  ],
+  "children": [
+    {
+      "personId": "p_jens_mollerup_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_mette_mollerup_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

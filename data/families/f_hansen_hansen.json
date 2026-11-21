@@ -1,0 +1,18 @@
+{
+  "id": "f_hansen_hansen",
+  "partnerIds": [
+    "p_keld_lisby_hansen",
+    "p_jane_hansen"
+  ],
+  "children": [
+    {
+      "personId": "p_carl_lisby_hansen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_gustav_lisby_hansen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

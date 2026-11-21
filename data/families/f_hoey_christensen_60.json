@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_christensen_60",
+  "partnerIds": [
+    "p_lars_pedersen_hoey",
+    "p_marie_dorthea_hoejfeldt_christensen"
+  ],
+  "children": [
+    {
+      "personId": "p_andreas_kristian_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_maren_kirstine_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_thyregod",
+  "partnerIds": [
+    "p_morten_thellefsen_hoey",
+    "p_helle_thyregod"
+  ],
+  "children": [
+    {
+      "personId": "p_christopher_thyregod_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_philip_thyregod_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

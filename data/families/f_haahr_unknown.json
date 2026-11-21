@@ -1,0 +1,13 @@
+{
+  "id": "f_haahr_unknown",
+  "partnerIds": [
+    "p_peder_martinsen_haahr"
+  ],
+  "children": [
+    {
+      "personId": "p_eline_kirstine_marie_haahr",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "f_thing_haahr",
+  "partnerIds": [
+    "p_hans_peder_kristensen_thing",
+    "p_eline_kirstine_marie_haahr"
+  ],
+  "children": [
+    {
+      "personId": "p_kristian_peder_thomsen_thing",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

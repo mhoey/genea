@@ -1,12 +1,5 @@
 package store
 
-type RelationType string
-
-const (
-	RelSpouse RelationType = "spouse"
-	RelChild  RelationType = "child"
-)
-
 type GenealogyStore interface {
 	// People
 	GetPerson(id string) (*Person, error)

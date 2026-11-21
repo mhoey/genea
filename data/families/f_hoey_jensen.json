@@ -1,0 +1,18 @@
+{
+  "id": "f_hoey_jensen",
+  "partnerIds": [
+    "p_niels_linnet_hoey",
+    "p_inge_jensen"
+  ],
+  "children": [
+    {
+      "personId": "p_annette_linnet_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_peter_linnet_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

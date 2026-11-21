@@ -1,0 +1,18 @@
+{
+  "id": "f_johannesen_hoey",
+  "partnerIds": [
+    "p_svend_erik_moerk_johannesen",
+    "p_sophie_linnet_hoey"
+  ],
+  "children": [
+    {
+      "personId": "p_birgit_hoey_johannesen",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_kirsten_hoey_johannesen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

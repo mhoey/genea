@@ -1,0 +1,14 @@
+{
+  "id": "f_bjerrisgaard_christensen",
+  "partnerIds": [
+    "p_bertel_hansen_bjerrisgaard",
+    "p_ane_ladegaard_christensen"
+  ],
+  "children": [
+    {
+      "personId": "p_berteline_kirstine_hansen_bjerrisgaard",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

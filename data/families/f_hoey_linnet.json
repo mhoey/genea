@@ -1,0 +1,30 @@
+{
+  "id": "f_hoey_linnet",
+  "partnerIds": [
+    "p_peder_kristian_hoey",
+    "p_anna_dorthea_marie_markussen_linnet"
+  ],
+  "children": [
+    {
+      "personId": "p_sophie_linnet_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_jens_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_anna_hedvig_linnet_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_niels_linnet_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_bent_linnet_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

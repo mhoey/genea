@@ -1,0 +1,14 @@
+{
+  "id": "f_joergensen_joergensen",
+  "partnerIds": [
+    "p_knud_nielsen_joergensen",
+    "p_else_katrine_joergensen"
+  ],
+  "children": [
+    {
+      "personId": "p_bodil_marie_joergensen",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}

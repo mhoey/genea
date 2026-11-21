@@ -1,0 +1,46 @@
+{
+  "id": "f_hoey_pedersen",
+  "partnerIds": [
+    "p_peder_henriksen_hoey",
+    "p_mette_marie_pedersdatter_pedersen"
+  ],
+  "children": [
+    {
+      "personId": "p_henrik_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_peder_christian_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_christen_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_henning_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_jens_jakob_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_elizabeth_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_margrethe_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_lars_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_jens_henrik_pedersen_hoey",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": []
+}
