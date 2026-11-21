@@ -22,6 +22,39 @@ func TestDataDirectoryIntegrity(t *testing.T) {
 		"p_alice_doe",
 	}
 
+	familyIDs := []string{
+		"f_doe_smith",
+		"f_doe_johnson",
+	}
+
+	if err := store.ValidateAll(); err != nil {
+		t.Fatalf("ValidateAll() failed: %v", err)
+	}
+
+	people, err := store.ListPeople()
+	if err != nil {
+		t.Fatalf("ListPeople() failed: %v", err)
+	}
+	if len(people) != len(peopleIDs) {
+		t.Errorf("expected %d people, got %d", len(peopleIDs), len(people))
+	}
+
+	families, err := store.ListFamilies()
+	if err != nil {
+		t.Fatalf("ListFamilies() failed: %v", err)
+	}
+	if len(families) != len(familyIDs) {
+		t.Errorf("expected %d families, got %d", len(familyIDs), len(families))
+	}
+
+	sources, err := store.ListSources()
+	if err != nil {
+		t.Fatalf("ListSources() failed: %v", err)
+	}
+	if len(sources) != 4 {
+		t.Errorf("expected 4 sources, got %d", len(sources))
+	}
+
 	for _, pid := range peopleIDs {
 		p, err := store.GetPerson(pid)
 		if err != nil {
@@ -41,11 +74,6 @@ func TestDataDirectoryIntegrity(t *testing.T) {
 				}
 			}
 		}
-	}
-
-	familyIDs := []string{
-		"f_doe_smith",
-		"f_doe_johnson",
 	}
 
 	for _, fid := range familyIDs {

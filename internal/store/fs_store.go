@@ -13,6 +13,8 @@ type FSStore struct {
 	RootDir string // e.g. "./data"
 }
 
+var _ GenealogyStore = (*FSStore)(nil)
+
 func NewFSStore(rootDir string) (*FSStore, error) {
 	for _, sub := range []string{"people", "families", "sources"} {
 		if err := os.MkdirAll(filepath.Join(rootDir, sub), 0o755); err != nil {
@@ -273,4 +275,177 @@ func (s *FSStore) AddChildRelation(familyID, childPersonID, relKind string) erro
 
 	p.FamilyIDAsChild = &familyID
 	return writeJSONAtomic(s.personPath(childPersonID), p)
+}
+
+func (s *FSStore) ListPeople() ([]Person, error) {
+	entries, err := os.ReadDir(filepath.Join(s.RootDir, "people"))
+	if err != nil {
+		return nil, err
+	}
+	var out []Person
+	for _, e := range entries {
+		if e.IsDir() || !strings.HasSuffix(e.Name(), ".json") {
+			continue
+		}
+		id := strings.TrimSuffix(e.Name(), ".json")
+		p, err := s.GetPerson(id)
+		if err != nil {
+			return nil, err
+		}
+		out = append(out, *p)
+	}
+	slices.SortFunc(out, func(a, b Person) int {
+		return strings.Compare(a.ID, b.ID)
+	})
+	return out, nil
+}
+
+func (s *FSStore) ListFamilies() ([]Family, error) {
+	entries, err := os.ReadDir(filepath.Join(s.RootDir, "families"))
+	if err != nil {
+		return nil, err
+	}
+	var out []Family
+	for _, e := range entries {
+		if e.IsDir() || !strings.HasSuffix(e.Name(), ".json") {
+			continue
+		}
+		id := strings.TrimSuffix(e.Name(), ".json")
+		f, err := s.GetFamily(id)
+		if err != nil {
+			return nil, err
+		}
+		out = append(out, *f)
+	}
+	slices.SortFunc(out, func(a, b Family) int {
+		return strings.Compare(a.ID, b.ID)
+	})
+	return out, nil
+}
+
+// --- Sources ---
+
+func (s *FSStore) AddSource(src Source) (*Source, error) {
+	if !sourceIDRe.MatchString(src.ID) {
+		return nil, fmt.Errorf("invalid source id %q: must match ^s_[a-zA-Z0-9_-]+$", src.ID)
+	}
+	if src.Title == "" {
+		return nil, fmt.Errorf("source %s requires non-empty title", src.ID)
+	}
+	path := s.sourcePath(src.ID)
+	if _, err := os.Stat(path); err == nil {
+		return nil, fmt.Errorf("source %s already exists", src.ID)
+	}
+	if err := writeJSONAtomic(path, src); err != nil {
+		return nil, err
+	}
+	return &src, nil
+}
+
+func (s *FSStore) ListSources() ([]Source, error) {
+	entries, err := os.ReadDir(filepath.Join(s.RootDir, "sources"))
+	if err != nil {
+		return nil, err
+	}
+	var out []Source
+	for _, e := range entries {
+		if e.IsDir() || !strings.HasSuffix(e.Name(), ".json") {
+			continue
+		}
+		id := strings.TrimSuffix(e.Name(), ".json")
+		src, err := readJSON[Source](s.sourcePath(id))
+		if err != nil {
+			return nil, err
+		}
+		out = append(out, *src)
+	}
+	slices.SortFunc(out, func(a, b Source) int {
+		return strings.Compare(a.ID, b.ID)
+	})
+	return out, nil
+}
+
+// --- Full Repository Integrity Check ---
+
+func (s *FSStore) ValidateAll() error {
+	people, err := s.ListPeople()
+	if err != nil {
+		return fmt.Errorf("listing people: %w", err)
+	}
+	families, err := s.ListFamilies()
+	if err != nil {
+		return fmt.Errorf("listing families: %w", err)
+	}
+	sources, err := s.ListSources()
+	if err != nil {
+		return fmt.Errorf("listing sources: %w", err)
+	}
+
+	sourceMap := make(map[string]bool, len(sources))
+	for _, src := range sources {
+		sourceMap[src.ID] = true
+	}
+
+	peopleMap := make(map[string]Person, len(people))
+	for _, p := range people {
+		if err := ValidatePerson(p); err != nil {
+			return fmt.Errorf("validating person %s: %w", p.ID, err)
+		}
+		for _, ev := range p.Events {
+			for _, sid := range ev.SourceIDs {
+				if !sourceMap[sid] {
+					return fmt.Errorf("person %s event %s references non-existent source %s", p.ID, ev.ID, sid)
+				}
+			}
+		}
+		peopleMap[p.ID] = p
+	}
+
+	familyMap := make(map[string]Family, len(families))
+	for _, f := range families {
+		if err := ValidateFamily(f); err != nil {
+			return fmt.Errorf("validating family %s: %w", f.ID, err)
+		}
+		for _, ev := range f.Events {
+			for _, sid := range ev.SourceIDs {
+				if !sourceMap[sid] {
+					return fmt.Errorf("family %s event %s references non-existent source %s", f.ID, ev.ID, sid)
+				}
+			}
+		}
+		for _, pid := range f.PartnerIDs {
+			p, exists := peopleMap[pid]
+			if !exists {
+				return fmt.Errorf("family %s references non-existent partner %s", f.ID, pid)
+			}
+			if !slices.Contains(p.FamilyIDsAsSpouse, f.ID) {
+				return fmt.Errorf("person %s does not link back to family %s as spouse", pid, f.ID)
+			}
+		}
+		for _, c := range f.Children {
+			p, exists := peopleMap[c.PersonID]
+			if !exists {
+				return fmt.Errorf("family %s references non-existent child %s", f.ID, c.PersonID)
+			}
+			if p.FamilyIDAsChild == nil || *p.FamilyIDAsChild != f.ID {
+				return fmt.Errorf("child %s does not link back to family %s as child", c.PersonID, f.ID)
+			}
+		}
+		familyMap[f.ID] = f
+	}
+
+	for _, p := range people {
+		if p.FamilyIDAsChild != nil {
+			if _, exists := familyMap[*p.FamilyIDAsChild]; !exists {
+				return fmt.Errorf("person %s references non-existent child family %s", p.ID, *p.FamilyIDAsChild)
+			}
+		}
+		for _, fid := range p.FamilyIDsAsSpouse {
+			if _, exists := familyMap[fid]; !exists {
+				return fmt.Errorf("person %s references non-existent spouse family %s", p.ID, fid)
+			}
+		}
+	}
+
+	return nil
 }
