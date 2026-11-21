@@ -1,0 +1,98 @@
+{
+  "id": "p_sophie_linnet_hoey",
+  "names": [
+    {
+      "given": "Sophie Linnet",
+      "surname": "Høy",
+      "display": "Sophie Linnet Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p3_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1921,
+        "month": 8,
+        "day": 4
+      },
+      "place": {
+        "name": "Tebelgård Henne sogn, V.Horne Herred, Ribe amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p3_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1921,
+        "month": 9,
+        "day": 18
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p3_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1935,
+        "month": 10,
+        "day": 6
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p3_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2010,
+        "month": 12,
+        "day": 12
+      },
+      "place": {
+        "name": "Plejehjemmet Klosterhaven Viborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p3_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 2010,
+        "month": 12,
+        "day": 15
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_johannesen_hoey"
+  ],
+  "familyIdAsChild": "f_hoey_linnet"
+}

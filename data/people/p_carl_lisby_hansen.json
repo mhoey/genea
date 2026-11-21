@@ -1,0 +1,48 @@
+{
+  "id": "p_carl_lisby_hansen",
+  "names": [
+    {
+      "given": "Carl Lisby",
+      "surname": "Hansen",
+      "display": "Carl Lisby Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p119_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2006,
+        "month": 9,
+        "day": 5
+      },
+      "place": {
+        "name": "Vindum sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p119_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 2007,
+        "month": 1,
+        "day": 7
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_hansen"
+}

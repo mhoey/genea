@@ -1,0 +1,94 @@
+{
+  "id": "p_peter_hansen",
+  "names": [
+    {
+      "given": "Peter",
+      "surname": "Hansen",
+      "display": "Peter Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p11_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1946,
+        "month": 7,
+        "day": 12
+      },
+      "place": {
+        "name": "Sønderborg sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p11_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p11_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p11_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1912,
+        "month": 4,
+        "day": 16
+      },
+      "place": {
+        "name": "Henne kirke - Kirkebog 1892-1913 Henne, V. Horne. Ribe, Opslag 160",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p11_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009,
+        "month": 2,
+        "day": 5
+      },
+      "place": {
+        "name": "Vindum",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p11_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009,
+        "month": 2,
+        "day": 13
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_johannesen"
+  ],
+  "familyIdAsChild": null
+}

@@ -1,0 +1,48 @@
+{
+  "id": "p_en_soen",
+  "names": [
+    {
+      "given": "En",
+      "surname": "Søn",
+      "display": "En Søn"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p54_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1802,
+        "month": 3,
+        "day": 27
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p54_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1867,
+        "month": 4,
+        "day": 30
+      },
+      "place": {
+        "name": "Outrup kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

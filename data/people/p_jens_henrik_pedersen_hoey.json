@@ -1,0 +1,111 @@
+{
+  "id": "p_jens_henrik_pedersen_hoey",
+  "names": [
+    {
+      "given": "Jens Henrik Pedersen",
+      "surname": "Høy",
+      "display": "Jens Henrik Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p8_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1850,
+        "month": 5,
+        "day": 29
+      },
+      "place": {
+        "name": "Aldershvile N.Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p8_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1850,
+        "month": 6,
+        "day": 30
+      },
+      "place": {
+        "name": "N.Nebel kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p8_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1864,
+        "month": 4,
+        "day": 3
+      },
+      "place": {
+        "name": "N.Nebel kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p8_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1916,
+        "month": 11,
+        "day": 30
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p8_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1928,
+        "month": 9,
+        "day": 28
+      },
+      "place": {
+        "name": "N.Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p8_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1928,
+        "month": 10,
+        "day": 3
+      },
+      "place": {
+        "name": "Henne kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_christensen",
+    "f_hoey_christensen_8"
+  ],
+  "familyIdAsChild": "f_hoey_pedersen"
+}

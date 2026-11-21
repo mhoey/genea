@@ -1,0 +1,50 @@
+{
+  "id": "p_henning_pedersen_hoey",
+  "names": [
+    {
+      "given": "Henning Pedersen",
+      "surname": "Høy",
+      "display": "Henning Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p88_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1836,
+        "month": 5,
+        "day": 28
+      },
+      "place": {
+        "name": "Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p88_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1890,
+        "month": 3,
+        "day": 19
+      },
+      "place": {
+        "name": "Nebel kro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_rasmussen"
+  ],
+  "familyIdAsChild": "f_hoey_pedersen"
+}

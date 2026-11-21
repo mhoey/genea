@@ -1,0 +1,48 @@
+{
+  "id": "p_peder_viggo_haahr",
+  "names": [
+    {
+      "given": "Peder Viggo",
+      "surname": "Haahr",
+      "display": "Peder Viggo Haahr"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p76_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1907,
+        "month": 8,
+        "day": 25
+      },
+      "place": {
+        "name": "Lunderskov, Skanderup Sogn, Anst Herred, Ribe Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p76_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1907,
+        "month": 10,
+        "day": 13
+      },
+      "place": {
+        "name": "Skanderup Kirke, Anst Herred, Ribe Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_haahr_joergensen"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "p_johannes_johannesen",
+  "names": [
+    {
+      "given": "Johannes",
+      "surname": "Johannesen",
+      "display": "Johannes Johannesen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p135_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1892
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_johannesen_moerk"
+  ],
+  "familyIdAsChild": null
+}

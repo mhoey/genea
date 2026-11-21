@@ -1,0 +1,36 @@
+{
+  "id": "p_grethe_christensen_hoey",
+  "names": [
+    {
+      "given": "Grethe Christensen",
+      "surname": "Høy",
+      "display": "Grethe Christensen Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p61_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "approximate",
+        "year": 1759
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p61_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_jensdatter"
+}

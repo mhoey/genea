@@ -1,0 +1,50 @@
+{
+  "id": "p_mette_marie_hoey",
+  "names": [
+    {
+      "given": "Mette Marie",
+      "surname": "Høy",
+      "display": "Mette Marie Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p157_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1885,
+        "month": 9,
+        "day": 15
+      },
+      "place": {
+        "name": "Snorom",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p157_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p157_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p157_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_legaard"
+}

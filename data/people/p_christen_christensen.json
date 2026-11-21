@@ -1,0 +1,42 @@
+{
+  "id": "p_christen_christensen",
+  "names": [
+    {
+      "given": "Christen",
+      "surname": "Christensen",
+      "display": "Christen Christensen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p150_birth",
+      "type": "birth",
+      "label": "Birth",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p150_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p150_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p150_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_christensen_dehn"
+  ],
+  "familyIdAsChild": null
+}

@@ -1,0 +1,54 @@
+{
+  "id": "p_peder_m_pedersen_hoey",
+  "names": [
+    {
+      "given": "Peder M. Pedersen",
+      "surname": "Høy",
+      "display": "Peder M. Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p171_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1864,
+        "month": 9,
+        "day": 30
+      },
+      "place": {
+        "name": "Skumsager Mark - Sønder Bork, N. Horne, Ringkøbing",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p171_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1880,
+        "month": 1,
+        "day": 30
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p171_burial",
+      "type": "burial",
+      "label": "Burial",
+      "place": {
+        "name": "Sønder Bork kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_christensen_63"
+}

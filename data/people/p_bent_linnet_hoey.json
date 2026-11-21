@@ -1,0 +1,80 @@
+{
+  "id": "p_bent_linnet_hoey",
+  "names": [
+    {
+      "given": "Bent Linnet",
+      "surname": "Høy",
+      "display": "Bent Linnet Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p7_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1939,
+        "month": 1,
+        "day": 27
+      },
+      "place": {
+        "name": "Vejle Amts & bys sygeh. Vor Frelser sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p7_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1939,
+        "month": 3,
+        "day": 12
+      },
+      "place": {
+        "name": "Jelling kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p7_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1953
+      },
+      "place": {
+        "name": "Tiset kirke, Solbjerg v/Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p7_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1960,
+        "month": 11,
+        "day": 5
+      },
+      "place": {
+        "name": "Vor Frue kirke, Ålborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_thellefsen"
+  ],
+  "familyIdAsChild": "f_hoey_linnet"
+}

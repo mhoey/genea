@@ -1,0 +1,114 @@
+{
+  "id": "p_marie_kirstine_hoey",
+  "names": [
+    {
+      "given": "Marie Kirstine",
+      "surname": "Høy",
+      "display": "Marie Kirstine Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p10_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1888,
+        "month": 7,
+        "day": 7
+      },
+      "place": {
+        "name": "Tebelgård, Henne - Kirkebog 1871-1892 Henne sogn, Opslag 86",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p10_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1888,
+        "month": 8,
+        "day": 9
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p10_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1902,
+        "month": 10,
+        "day": 5
+      },
+      "place": {
+        "name": "Lønne kirke - Kirkebog 1892-1913 Henne sogn, Opslag 126",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p10_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1880,
+        "month": 4,
+        "day": 20
+      },
+      "place": {
+        "name": "Henne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p10_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1928,
+        "month": 4,
+        "day": 3
+      },
+      "place": {
+        "name": "Stausø, Henne - Kirkebog 1914-1929 Henne sogn, Opslag 286",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p10_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1928,
+        "month": 4,
+        "day": 10
+      },
+      "place": {
+        "name": "Henne kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_larsen_hoey"
+  ],
+  "familyIdAsChild": "f_hoey_christensen"
+}

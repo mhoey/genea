@@ -1,0 +1,42 @@
+{
+  "id": "p_jens_simon_henriksen_hoey",
+  "names": [
+    {
+      "given": "Jens Simon Henriksen",
+      "surname": "Høy",
+      "display": "Jens Simon Henriksen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p56_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1810,
+        "month": 7,
+        "day": 21
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p56_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1865
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

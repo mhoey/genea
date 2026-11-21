@@ -1,0 +1,46 @@
+{
+  "id": "p_joergen_christensen_hoey",
+  "names": [
+    {
+      "given": "Jørgen Christensen",
+      "surname": "Høy",
+      "display": "Jørgen Christensen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p63_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "approximate",
+        "year": 1763
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p63_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1859,
+        "month": 11,
+        "day": 11
+      },
+      "place": {
+        "name": "N.Nebel kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_jensdatter"
+}

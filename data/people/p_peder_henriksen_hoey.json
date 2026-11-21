@@ -1,0 +1,114 @@
+{
+  "id": "p_peder_henriksen_hoey",
+  "names": [
+    {
+      "given": "Peder Henriksen",
+      "surname": "Høy",
+      "display": "Peder Henriksen Høy"
+    },
+    {
+      "given": "Peder Henrichen",
+      "surname": "Høy",
+      "display": "Peder Henrichen Høy",
+      "type": "also_known_as"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p29_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1793,
+        "month": 5,
+        "day": 12
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p29_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1793,
+        "month": 5,
+        "day": 20
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p29_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1903,
+        "month": 2,
+        "day": 14
+      },
+      "place": {
+        "name": "Harte kirke, Brusk Herred, Vejle Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p29_residence",
+      "type": "residence",
+      "label": "Residence",
+      "place": {
+        "name": "Paaby, Harte Sogn, Brusk Herred, Vejle Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p29_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1857,
+        "month": 1,
+        "day": 6
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p29_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1857,
+        "month": 1,
+        "day": 14
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_pedersen"
+  ],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

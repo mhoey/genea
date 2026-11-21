@@ -1,0 +1,70 @@
+{
+  "id": "p_jens_henriksen_hoey",
+  "names": [
+    {
+      "given": "Jens Henriksen",
+      "surname": "Høy",
+      "display": "Jens Henriksen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p60_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1796,
+        "month": 12,
+        "day": 31
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p60_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p60_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1849,
+        "month": 12,
+        "day": 12
+      },
+      "place": {
+        "name": "Sædding",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p60_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1849,
+        "month": 12,
+        "day": 20
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

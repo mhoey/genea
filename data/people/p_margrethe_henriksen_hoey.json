@@ -1,0 +1,44 @@
+{
+  "id": "p_margrethe_henriksen_hoey",
+  "names": [
+    {
+      "given": "Margrethe Henriksen",
+      "surname": "Høy",
+      "display": "Margrethe Henriksen Høy"
+    },
+    {
+      "given": "Hansen",
+      "surname": "",
+      "display": "Hansen",
+      "type": "also_known_as"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p58_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1800,
+        "month": 9,
+        "day": 15
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p58_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

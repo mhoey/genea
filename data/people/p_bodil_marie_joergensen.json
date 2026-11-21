@@ -1,0 +1,50 @@
+{
+  "id": "p_bodil_marie_joergensen",
+  "names": [
+    {
+      "given": "Bodil Marie",
+      "surname": "Jørgensen)",
+      "display": "Bodil Marie Jørgensen)"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p75_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1882,
+        "month": 7,
+        "day": 10
+      },
+      "place": {
+        "name": "Paaby, Harte Sogn, Brusk Herred, Vejle Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p75_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1882,
+        "month": 7,
+        "day": 30
+      },
+      "place": {
+        "name": "Harte kirke, Brusk Herred, Vejle Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_haahr_joergensen"
+  ],
+  "familyIdAsChild": "f_joergensen_joergensen"
+}

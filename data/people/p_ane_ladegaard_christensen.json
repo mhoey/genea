@@ -1,0 +1,43 @@
+{
+  "id": "p_ane_ladegaard_christensen",
+  "names": [
+    {
+      "given": "Ane Ladegaard",
+      "surname": "Christensen",
+      "display": "Ane Ladegaard Christensen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p143_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1861,
+        "month": 3,
+        "day": 31
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p143_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1947,
+        "month": 5,
+        "day": 7
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_bjerrisgaard_christensen",
+    "f_linnet_christensen"
+  ],
+  "familyIdAsChild": null
+}

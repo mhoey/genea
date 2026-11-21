@@ -1,0 +1,48 @@
+{
+  "id": "p_christopher_thyregod_hoey",
+  "names": [
+    {
+      "given": "Christopher Thyregod",
+      "surname": "Høy",
+      "display": "Christopher Thyregod Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p87_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2008,
+        "month": 10,
+        "day": 15
+      },
+      "place": {
+        "name": "Viby J. sogn v/Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p87_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 2008,
+        "month": 12,
+        "day": 28
+      },
+      "place": {
+        "name": "Viby kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_thyregod"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "p_valborg_moeller",
+  "names": [
+    {
+      "given": "Valborg",
+      "surname": "Møller",
+      "display": "Valborg Møller"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p160_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1903,
+        "month": 1,
+        "day": 28
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p160_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p160_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p160_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1973,
+        "month": 2,
+        "day": 21
+      },
+      "place": {
+        "name": "Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_moeller"
+  ],
+  "familyIdAsChild": null
+}

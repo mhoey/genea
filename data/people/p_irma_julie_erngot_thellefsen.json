@@ -1,0 +1,64 @@
+{
+  "id": "p_irma_julie_erngot_thellefsen",
+  "names": [
+    {
+      "given": "Irma Julie Erngot",
+      "surname": "Thellefsen",
+      "display": "Irma Julie Erngot Thellefsen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p92_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1914,
+        "month": 11,
+        "day": 22
+      },
+      "place": {
+        "name": "Dronninglund",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p92_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1915
+      },
+      "place": {
+        "name": "Vor Frue kirke, Ålborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p92_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1998,
+        "month": 8,
+        "day": 20
+      },
+      "place": {
+        "name": "Malling ved Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thellefsen_thellefsen"
+  ],
+  "familyIdAsChild": "f_hansen_hansen_36"
+}

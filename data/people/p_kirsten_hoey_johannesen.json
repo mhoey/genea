@@ -1,0 +1,72 @@
+{
+  "id": "p_kirsten_hoey_johannesen",
+  "names": [
+    {
+      "given": "Kirsten Høy",
+      "surname": "Johannesen",
+      "display": "Kirsten Høy Johannesen"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p12_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1951,
+        "month": 12,
+        "day": 21
+      },
+      "place": {
+        "name": "Vindum sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p12_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p12_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1966,
+        "month": 5,
+        "day": 1
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p12_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1979,
+        "month": 9,
+        "day": 8
+      },
+      "place": {
+        "name": "Elsborg kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_johannesen"
+  ],
+  "familyIdAsChild": "f_johannesen_hoey"
+}

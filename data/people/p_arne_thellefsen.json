@@ -1,0 +1,64 @@
+{
+  "id": "p_arne_thellefsen",
+  "names": [
+    {
+      "given": "Arne",
+      "surname": "Thellefsen",
+      "display": "Arne Thellefsen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p91_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "month": 9,
+        "day": 26
+      },
+      "place": {
+        "name": "Åby sogn, Åbubro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p91_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "month": 12,
+        "day": 26
+      },
+      "place": {
+        "name": "Åby kirke, Åbybro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p91_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1984,
+        "month": 8,
+        "day": 17
+      },
+      "place": {
+        "name": "Silkeborg sygehus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thellefsen_thellefsen"
+  ],
+  "familyIdAsChild": null
+}

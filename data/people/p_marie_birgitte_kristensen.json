@@ -1,0 +1,54 @@
+{
+  "id": "p_marie_birgitte_kristensen",
+  "names": [
+    {
+      "given": "Marie Birgitte",
+      "surname": "Kristensen",
+      "display": "Marie Birgitte Kristensen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p152_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1839,
+        "month": 4,
+        "day": 30
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p152_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p152_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p152_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1913,
+        "month": 4,
+        "day": 3
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_kristensen"
+  ],
+  "familyIdAsChild": null
+}

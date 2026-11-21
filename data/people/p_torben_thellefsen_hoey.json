@@ -1,0 +1,82 @@
+{
+  "id": "p_torben_thellefsen_hoey",
+  "names": [
+    {
+      "given": "Torben Thellefsen",
+      "surname": "Høy",
+      "display": "Torben Thellefsen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p18_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1961,
+        "month": 10,
+        "day": 26
+      },
+      "place": {
+        "name": "Århus Domsogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p18_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1961,
+        "month": 12,
+        "day": 3
+      },
+      "place": {
+        "name": "Sct. Lucas kirke Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p18_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1975,
+        "month": 4,
+        "day": 13
+      },
+      "place": {
+        "name": "Langenæs kirke Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p18_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 2008,
+        "month": 12,
+        "day": 20
+      },
+      "place": {
+        "name": "Århus Rådhus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_mollerup"
+  ],
+  "familyIdAsChild": "f_hoey_thellefsen"
+}

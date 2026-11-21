@@ -1,0 +1,50 @@
+{
+  "id": "p_niels_markussen_linnet",
+  "names": [
+    {
+      "given": "Niels Markussen",
+      "surname": "Linnet",
+      "display": "Niels Markussen Linnet"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p144_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1852,
+        "month": 6,
+        "day": 9
+      },
+      "place": {
+        "name": "Skærup v. Vejle",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p144_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1929,
+        "month": 7,
+        "day": 1
+      },
+      "place": {
+        "name": "Vejlby",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_linnet_christensen"
+  ],
+  "familyIdAsChild": null
+}

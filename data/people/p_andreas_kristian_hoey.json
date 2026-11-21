@@ -1,0 +1,62 @@
+{
+  "id": "p_andreas_kristian_hoey",
+  "names": [
+    {
+      "given": "Andreas Kristian",
+      "surname": "Høy",
+      "display": "Andreas Kristian Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p159_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1892,
+        "month": 9,
+        "day": 16
+      },
+      "place": {
+        "name": "Snorom kro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p159_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p159_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p159_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1980,
+        "month": 3,
+        "day": 6
+      },
+      "place": {
+        "name": "Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_moeller"
+  ],
+  "familyIdAsChild": "f_hoey_christensen_60"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "p_svend_erik_moerk_johannesen",
+  "names": [
+    {
+      "given": "Svend Erik Mørk",
+      "surname": "Johannesen",
+      "display": "Svend Erik Mørk Johannesen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p17_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1919,
+        "month": 12,
+        "day": 4
+      },
+      "place": {
+        "name": "Rødkærsbro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p17_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1920,
+        "month": 1,
+        "day": 11
+      },
+      "place": {
+        "name": "Elsborg kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p17_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1934,
+        "month": 4,
+        "day": 8
+      },
+      "place": {
+        "name": "Elsborg kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p17_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1942,
+        "month": 12,
+        "day": 13
+      },
+      "place": {
+        "name": "Vor Frue kirke, Ålborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p17_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1985
+      },
+      "place": {
+        "name": "Kjellerup sygehus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p17_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1985
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_johannesen_hoey"
+  ],
+  "familyIdAsChild": "f_johannesen_moerk"
+}

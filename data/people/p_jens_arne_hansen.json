@@ -1,0 +1,48 @@
+{
+  "id": "p_jens_arne_hansen",
+  "names": [
+    {
+      "given": "Jens Arne",
+      "surname": "Hansen",
+      "display": "Jens Arne Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p72_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1933,
+        "month": 8,
+        "day": 22
+      },
+      "place": {
+        "name": "Sig, Torstrup Sogn, Ø. Horne Herred, Ribe amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p72_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1933,
+        "month": 9,
+        "day": 24
+      },
+      "place": {
+        "name": "Torstrup kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_haahr"
+}

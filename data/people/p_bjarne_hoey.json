@@ -1,0 +1,40 @@
+{
+  "id": "p_bjarne_hoey",
+  "names": [
+    {
+      "given": "Bjarne",
+      "surname": "Høy",
+      "display": "Bjarne Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p24_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1955,
+        "month": 5,
+        "day": 24
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p24_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p24_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_larsen"
+}

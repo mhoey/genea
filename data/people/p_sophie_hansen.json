@@ -1,0 +1,32 @@
+{
+  "id": "p_sophie_hansen",
+  "names": [
+    {
+      "given": "Sophie",
+      "surname": "Hansen",
+      "display": "Sophie Hansen"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p137_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p137_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_marianne"
+}

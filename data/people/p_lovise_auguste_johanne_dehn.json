@@ -1,0 +1,72 @@
+{
+  "id": "p_lovise_auguste_johanne_dehn",
+  "names": [
+    {
+      "given": "Lovise Auguste Johanne",
+      "surname": "Dehn",
+      "display": "Lovise Auguste Johanne Dehn"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p151_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "approximate",
+        "year": 1790
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p151_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p151_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p151_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1836,
+        "month": 10,
+        "day": 7
+      },
+      "place": {
+        "name": "Outrup (46 år)",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p151_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1836,
+        "month": 10,
+        "day": 15
+      },
+      "place": {
+        "name": "Outrup kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_christensen_dehn"
+  ],
+  "familyIdAsChild": null
+}

@@ -1,0 +1,56 @@
+{
+  "id": "p_kristian_peder_thomsen_thing",
+  "names": [
+    {
+      "given": "Kristian Peder Thomsen",
+      "surname": "Thing",
+      "display": "Kristian Peder Thomsen Thing"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p145_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 3,
+        "day": 6
+      },
+      "place": {
+        "name": "Hennebjerg Henne sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p145_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 5,
+        "day": 9
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p145_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thing_bjerrisgaard"
+  ],
+  "familyIdAsChild": "f_thing_haahr"
+}

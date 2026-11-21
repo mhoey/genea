@@ -1,0 +1,54 @@
+{
+  "id": "p_jens_mollerup_hoey",
+  "names": [
+    {
+      "given": "Jens Mollerup",
+      "surname": "Høy",
+      "display": "Jens Mollerup Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p20_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1993,
+        "month": 9,
+        "day": 7
+      },
+      "place": {
+        "name": "Sct. Johannes sogn Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p20_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1993,
+        "month": 12,
+        "day": 26
+      },
+      "place": {
+        "name": "Vejlby kirke ved Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p20_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_mollerup"
+}

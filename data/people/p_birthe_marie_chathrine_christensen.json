@@ -1,0 +1,66 @@
+{
+  "id": "p_birthe_marie_chathrine_christensen",
+  "names": [
+    {
+      "given": "Birthe Marie Chathrine",
+      "surname": "Christensen",
+      "display": "Birthe Marie Chathrine Christensen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p40_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1866,
+        "month": 4,
+        "day": 17
+      },
+      "place": {
+        "name": "Lønne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p40_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1866,
+        "month": 4,
+        "day": 20
+      },
+      "place": {
+        "name": "Lønne Hjemmedøbt, fremstillet i kirken 5 jul. 1866",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p40_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1960,
+        "month": 7,
+        "day": 23
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_christensen_8"
+  ],
+  "familyIdAsChild": null
+}

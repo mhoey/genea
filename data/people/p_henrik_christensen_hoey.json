@@ -1,0 +1,78 @@
+{
+  "id": "p_henrik_christensen_hoey",
+  "names": [
+    {
+      "given": "Henrik Christensen",
+      "surname": "Høy",
+      "display": "Henrik Christensen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p31_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1760
+      },
+      "place": {
+        "name": "Nr. Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p31_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1775
+      },
+      "place": {
+        "name": "Nr. Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p31_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1818,
+        "month": 10,
+        "day": 15
+      },
+      "place": {
+        "name": "Nr. Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p31_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1818,
+        "month": 10,
+        "day": 24
+      },
+      "place": {
+        "name": "Nr. Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_lauritsdatter"
+  ],
+  "familyIdAsChild": "f_hoey_jensdatter"
+}

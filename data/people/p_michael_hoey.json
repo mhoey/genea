@@ -1,0 +1,46 @@
+{
+  "id": "p_michael_hoey",
+  "names": [
+    {
+      "given": "Michael",
+      "surname": "Høy",
+      "display": "Michael Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p25_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1956,
+        "month": 12,
+        "day": 22
+      },
+      "place": {
+        "name": "Trånby, Amager",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p25_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p25_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_mortensen"
+  ],
+  "familyIdAsChild": "f_hoey_larsen"
+}

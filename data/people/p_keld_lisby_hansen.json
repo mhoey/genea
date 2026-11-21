@@ -1,0 +1,50 @@
+{
+  "id": "p_keld_lisby_hansen",
+  "names": [
+    {
+      "given": "Keld Lisby",
+      "surname": "Hansen",
+      "display": "Keld Lisby Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p120_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1974,
+        "month": 11,
+        "day": 6
+      },
+      "place": {
+        "name": "Viborg Søndre sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p120_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1974,
+        "month": 12,
+        "day": 22
+      },
+      "place": {
+        "name": "Viborg Søndre sogns kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_hansen"
+  ],
+  "familyIdAsChild": null
+}

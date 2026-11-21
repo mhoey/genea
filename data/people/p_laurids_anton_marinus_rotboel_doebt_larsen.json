@@ -1,0 +1,66 @@
+{
+  "id": "p_laurids_anton_marinus_rotboel_doebt_larsen",
+  "names": [
+    {
+      "given": "Laurids Anton Marinus Rotbøl (døbt",
+      "surname": "Larsen)",
+      "display": "Laurids Anton Marinus Rotbøl (døbt Larsen)"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p85_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1883,
+        "month": 3,
+        "day": 8
+      },
+      "place": {
+        "name": "Stavsø - Kirkebog 1871-1892 Henne, V.Horne, Ribe, Opslag 27",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p85_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1883,
+        "month": 4,
+        "day": 29
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p85_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1897,
+        "month": 4,
+        "day": 11
+      },
+      "place": {
+        "name": "Henne kirke - Kirkebog 1892-1913 Henne, V.Horne, Ribe, Opslag 98",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_larsen_hoey"
+  ],
+  "familyIdAsChild": "f_rotboel_soerensen"
+}

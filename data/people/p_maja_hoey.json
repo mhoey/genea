@@ -1,0 +1,32 @@
+{
+  "id": "p_maja_hoey",
+  "names": [
+    {
+      "given": "Maja",
+      "surname": "Høy",
+      "display": "Maja Høy"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p37_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1999,
+        "month": 9,
+        "day": 20
+      },
+      "place": {
+        "name": "Havnsø (Holbæk Sygehus)",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_mortensen"
+}

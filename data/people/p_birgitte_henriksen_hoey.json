@@ -1,0 +1,54 @@
+{
+  "id": "p_birgitte_henriksen_hoey",
+  "names": [
+    {
+      "given": "Birgitte Henriksen",
+      "surname": "Høy",
+      "display": "Birgitte Henriksen Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p55_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1791,
+        "month": 5,
+        "day": 21
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p55_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1791,
+        "month": 5,
+        "day": 22
+      },
+      "place": {
+        "name": "Hjemmedøbt, Fremstillet 03.07.1791",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p55_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

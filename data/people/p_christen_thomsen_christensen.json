@@ -1,0 +1,99 @@
+{
+  "id": "p_christen_thomsen_christensen",
+  "names": [
+    {
+      "given": "Christen Thomsen",
+      "surname": "Christensen",
+      "display": "Christen Thomsen Christensen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p139_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1824,
+        "month": 3,
+        "day": 3
+      },
+      "place": {
+        "name": "Outrup sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p139_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1824,
+        "month": 3,
+        "day": 4
+      },
+      "place": {
+        "name": "(Hjemmedøbt) fremstillet i Outrup kirke 9 maj 1824",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p139_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1838,
+        "month": 4,
+        "day": 22
+      },
+      "place": {
+        "name": "Lunde kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p139_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1894,
+        "month": 6,
+        "day": 24
+      },
+      "place": {
+        "name": "Hennebjerg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p139_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1894,
+        "month": 6,
+        "day": 29
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_christensen_pedersen",
+    "f_christensen_hansen"
+  ],
+  "familyIdAsChild": "f_christensen_dehn"
+}

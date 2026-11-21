@@ -1,0 +1,17 @@
+{
+  "id": "p_kristian_anton_martinus_larsen_senere_rotboel",
+  "names": [
+    {
+      "given": "Kristian Anton Martinus Larsen (senere",
+      "surname": "Rotbøl)",
+      "display": "Kristian Anton Martinus Larsen (senere Rotbøl)"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [],
+  "familyIdsAsSpouse": [
+    "f_rotboel_soerensen"
+  ],
+  "familyIdAsChild": null
+}

@@ -1,0 +1,64 @@
+{
+  "id": "p_eline_kirstine_marie_haahr",
+  "names": [
+    {
+      "given": "Eline Kirstine Marie",
+      "surname": "Haahr",
+      "display": "Eline Kirstine Marie Haahr"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p146_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1860,
+        "month": 12,
+        "day": 26
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p146_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1861,
+        "month": 2,
+        "day": 17
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p146_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p146_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p146_burial",
+      "type": "burial",
+      "label": "Burial",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thing_haahr"
+  ],
+  "familyIdAsChild": "f_haahr_unknown"
+}

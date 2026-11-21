@@ -1,0 +1,32 @@
+{
+  "id": "p_peter_linnet_hoey",
+  "names": [
+    {
+      "given": "Peter Linnet",
+      "surname": "Høy",
+      "display": "Peter Linnet Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p28_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1962,
+        "month": 12,
+        "day": 18
+      },
+      "place": {
+        "name": "Sct. Johannes sogn, Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_jensen"
+}

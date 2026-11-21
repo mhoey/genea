@@ -1,0 +1,66 @@
+{
+  "id": "p_hans_peder_kristensen_thing",
+  "names": [
+    {
+      "given": "Hans Peder Kristensen",
+      "surname": "Thing",
+      "display": "Hans Peder Kristensen Thing"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p84_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1860,
+        "month": 7,
+        "day": 12
+      },
+      "place": {
+        "name": "Hennebjerg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p84_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1860,
+        "month": 8,
+        "day": 5
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p84_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1875,
+        "month": 4,
+        "day": 4
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thing_haahr"
+  ],
+  "familyIdAsChild": "f_christensen_pedersen"
+}

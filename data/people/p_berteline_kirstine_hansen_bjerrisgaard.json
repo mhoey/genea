@@ -1,0 +1,40 @@
+{
+  "id": "p_berteline_kirstine_hansen_bjerrisgaard",
+  "names": [
+    {
+      "given": "Berteline Kirstine Hansen",
+      "surname": "Bjerrisgaard",
+      "display": "Berteline Kirstine Hansen Bjerrisgaard"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p141_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1888,
+        "month": 9,
+        "day": 3
+      },
+      "place": {
+        "name": "Egum, Fredericia Trintatis sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p141_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_thing_bjerrisgaard"
+  ],
+  "familyIdAsChild": "f_bjerrisgaard_christensen"
+}

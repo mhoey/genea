@@ -1,0 +1,30 @@
+{
+  "id": "p_bertel_hansen_bjerrisgaard",
+  "names": [
+    {
+      "given": "Bertel Hansen",
+      "surname": "Bjerrisgaard",
+      "display": "Bertel Hansen Bjerrisgaard"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p142_birth",
+      "type": "birth",
+      "label": "Birth",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p142_death",
+      "type": "death",
+      "label": "Death",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_bjerrisgaard_christensen"
+  ],
+  "familyIdAsChild": null
+}

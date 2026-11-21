@@ -1,0 +1,60 @@
+{
+  "id": "p_maren_kirstine_hoey",
+  "names": [
+    {
+      "given": "Maren Kirstine",
+      "surname": "Høy",
+      "display": "Maren Kirstine Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p161_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1893,
+        "month": 12,
+        "day": 22
+      },
+      "place": {
+        "name": "Snorom, Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p161_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p161_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p161_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1987,
+        "month": 9,
+        "day": 13
+      },
+      "place": {
+        "name": "Esbjerg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_christensen_60"
+}

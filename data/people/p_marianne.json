@@ -1,0 +1,36 @@
+{
+  "id": "p_marianne",
+  "names": [
+    {
+      "given": "Marianne",
+      "surname": "Marianne",
+      "display": "Marianne"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p121_birth",
+      "type": "birth",
+      "label": "Birth",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p121_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p121_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_marianne"
+  ],
+  "familyIdAsChild": null
+}

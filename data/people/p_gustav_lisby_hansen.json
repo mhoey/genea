@@ -1,0 +1,48 @@
+{
+  "id": "p_gustav_lisby_hansen",
+  "names": [
+    {
+      "given": "Gustav Lisby",
+      "surname": "Hansen",
+      "display": "Gustav Lisby Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p138_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009,
+        "month": 10,
+        "day": 7
+      },
+      "place": {
+        "name": "Vindum sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p138_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 2010,
+        "month": 1,
+        "day": 10
+      },
+      "place": {
+        "name": "Vindum kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_hansen"
+}

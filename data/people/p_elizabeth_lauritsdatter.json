@@ -1,0 +1,32 @@
+{
+  "id": "p_elizabeth_lauritsdatter",
+  "names": [
+    {
+      "given": "Elizabeth",
+      "surname": "Lauritsdatter",
+      "display": "Elizabeth Lauritsdatter"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p32_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1764
+      },
+      "place": {
+        "name": "Formodenlig født i Nr. Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_lauritsdatter"
+  ],
+  "familyIdAsChild": null
+}

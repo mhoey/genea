@@ -1,0 +1,17 @@
+{
+  "id": "p_kirstine_soerensen",
+  "names": [
+    {
+      "given": "Kirstine",
+      "surname": "Sørensen",
+      "display": "Kirstine Sørensen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [],
+  "familyIdsAsSpouse": [
+    "f_rotboel_soerensen"
+  ],
+  "familyIdAsChild": null
+}

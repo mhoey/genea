@@ -1,0 +1,64 @@
+{
+  "id": "p_mette_mollerup_hoey",
+  "names": [
+    {
+      "given": "Mette Mollerup",
+      "surname": "Høy",
+      "display": "Mette Mollerup Høy"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p36_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1998,
+        "month": 2,
+        "day": 10
+      },
+      "place": {
+        "name": "Rykkinn Bærum Kommune ved Oslo Norge",
+        "country": "Norge"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p36_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1998,
+        "month": 4,
+        "day": 12
+      },
+      "place": {
+        "name": "Vejlby kirke ved Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p36_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1912,
+        "month": 5,
+        "day": 30
+      },
+      "place": {
+        "name": "Sct Mortens kirke Randers",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_mollerup"
+}

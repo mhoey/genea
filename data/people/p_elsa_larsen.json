@@ -1,0 +1,71 @@
+{
+  "id": "p_elsa_larsen",
+  "names": [
+    {
+      "given": "Elsa",
+      "surname": "Larsen",
+      "display": "Elsa Larsen"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p23_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1927,
+        "month": 1,
+        "day": 16
+      },
+      "place": {
+        "name": "På Amager ?",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p23_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p23_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p23_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1923,
+        "month": 2
+      },
+      "place": {
+        "name": "Skanderup Kirke, Anst Herred, Ribe Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p23_residence",
+      "type": "residence",
+      "label": "Residence",
+      "place": {
+        "name": "Sig, Torstrup Sogn, Ø. Horne Herred, Ribe amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_larsen"
+  ],
+  "familyIdAsChild": null
+}

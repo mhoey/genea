@@ -1,0 +1,54 @@
+{
+  "id": "p_christen_henriksen_hoey",
+  "names": [
+    {
+      "given": "Christen Henriksen",
+      "surname": "Høy",
+      "display": "Christen Henriksen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p59_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1789,
+        "month": 9,
+        "day": 16
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p59_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p59_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1868,
+        "month": 4,
+        "day": 3
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

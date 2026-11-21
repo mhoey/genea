@@ -1,0 +1,114 @@
+{
+  "id": "p_jens_hoey",
+  "names": [
+    {
+      "given": "Jens",
+      "surname": "Høy",
+      "display": "Jens Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p4_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1922,
+        "month": 12,
+        "day": 15
+      },
+      "place": {
+        "name": "Tebelgård, Henne sogn, V. Horne Herred, Ribe amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1923,
+        "month": 1,
+        "day": 21
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1937,
+        "month": 4,
+        "day": 11
+      },
+      "place": {
+        "name": "Egeskov kirke, Vejlby v/Fredericia",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "approximate",
+        "year": 1945,
+        "month": 6,
+        "day": 18
+      },
+      "place": {
+        "name": "Viby kirke v/Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2002,
+        "month": 1,
+        "day": 23
+      },
+      "place": {
+        "name": "Glostrup hospital, København",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 2002,
+        "month": 1,
+        "day": 28
+      },
+      "place": {
+        "name": "Tårnby kirke, Amager",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_larsen"
+  ],
+  "familyIdAsChild": "f_hoey_linnet"
+}

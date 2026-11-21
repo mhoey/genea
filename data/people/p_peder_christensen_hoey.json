@@ -1,0 +1,44 @@
+{
+  "id": "p_peder_christensen_hoey",
+  "names": [
+    {
+      "given": "Peder Christensen",
+      "surname": "Høy",
+      "display": "Peder Christensen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p64_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1759,
+        "month": 8,
+        "day": 25
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p64_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1779,
+        "month": 1,
+        "day": 27
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_jensdatter"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "p_maren_maria_moerk",
+  "names": [
+    {
+      "given": "Maren Maria",
+      "surname": "Mørk",
+      "display": "Maren Maria Mørk"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p136_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1891
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_johannesen_moerk"
+  ],
+  "familyIdAsChild": null
+}

@@ -1,0 +1,52 @@
+{
+  "id": "p_annette_linnet_hoey",
+  "names": [
+    {
+      "given": "Annette Linnet",
+      "surname": "Høy",
+      "display": "Annette Linnet Høy"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p27_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1959,
+        "month": 2,
+        "day": 10
+      },
+      "place": {
+        "name": "Sct. Johannes sogn, Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p27_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p27_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1973,
+        "month": 5,
+        "day": 18
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_borch_hoey"
+  ],
+  "familyIdAsChild": "f_hoey_jensen"
+}

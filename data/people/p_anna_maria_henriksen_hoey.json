@@ -1,0 +1,80 @@
+{
+  "id": "p_anna_maria_henriksen_hoey",
+  "names": [
+    {
+      "given": "Anna Maria Henriksen",
+      "surname": "Høy",
+      "display": "Anna Maria Henriksen Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p53_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1798,
+        "month": 10,
+        "day": 12
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p53_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1798,
+        "month": 10,
+        "day": 13
+      },
+      "place": {
+        "name": "Hjemmedøbt - Ført til kirken 28 okt 1798",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p53_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1856,
+        "month": 1,
+        "day": 20
+      },
+      "place": {
+        "name": "Lønnestak, Lønne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p53_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1856,
+        "month": 1,
+        "day": 27
+      },
+      "place": {
+        "name": "Lønne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

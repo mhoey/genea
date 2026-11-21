@@ -1,0 +1,68 @@
+{
+  "id": "p_connie_mollerup",
+  "names": [
+    {
+      "given": "Connie",
+      "surname": "Mollerup",
+      "display": "Connie Mollerup"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p19_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1964,
+        "month": 1,
+        "day": 6
+      },
+      "place": {
+        "name": "Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p19_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p19_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1977,
+        "month": 3,
+        "day": 14
+      },
+      "place": {
+        "name": "Vejlby kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p19_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1999,
+        "month": 12,
+        "day": 4
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_mollerup"
+  ],
+  "familyIdAsChild": null
+}

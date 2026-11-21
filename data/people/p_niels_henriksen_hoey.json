@@ -1,0 +1,38 @@
+{
+  "id": "p_niels_henriksen_hoey",
+  "names": [
+    {
+      "given": "Niels Henriksen",
+      "surname": "Høy",
+      "display": "Niels Henriksen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p57_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1788,
+        "month": 9,
+        "day": 15
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p57_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_lauritsdatter"
+}

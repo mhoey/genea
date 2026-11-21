@@ -1,0 +1,94 @@
+{
+  "id": "p_birgit_hoey_johannesen",
+  "names": [
+    {
+      "given": "Birgit Høy",
+      "surname": "Johannesen",
+      "display": "Birgit Høy Johannesen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p16_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1946,
+        "month": 9,
+        "day": 19
+      },
+      "place": {
+        "name": "Sct. Lucas sogn Århus ?",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p16_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p16_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "place": {
+        "name": "Brændstrup kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p16_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1993,
+        "month": 4,
+        "day": 3
+      },
+      "place": {
+        "name": "Århus Rådhus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p16_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2003
+      },
+      "place": {
+        "name": "Randers",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p16_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 2003
+      },
+      "place": {
+        "name": "Randers Nordre kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_fogt_johannesen"
+  ],
+  "familyIdAsChild": "f_johannesen_hoey"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "p_barbara_kirstine_hoey",
+  "names": [
+    {
+      "given": "Barbara Kirstine",
+      "surname": "Høy",
+      "display": "Barbara Kirstine Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p165_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1883,
+        "month": 4,
+        "day": 25
+      },
+      "place": {
+        "name": "Snorom kro",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p165_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p165_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p165_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1925,
+        "month": 12,
+        "day": 23
+      },
+      "place": {
+        "name": "Sct. Hans Hospital",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_legaard"
+}

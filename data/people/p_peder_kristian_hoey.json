@@ -1,0 +1,108 @@
+{
+  "id": "p_peder_kristian_hoey",
+  "names": [
+    {
+      "given": "Peder Kristian",
+      "surname": "Høy",
+      "display": "Peder Kristian Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p1_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1891,
+        "month": 3,
+        "day": 1
+      },
+      "place": {
+        "name": "Tebelgård, Henne sogn, V. Horne, Ribe",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p1_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1891,
+        "month": 4,
+        "day": 26
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p1_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1905,
+        "month": 4,
+        "day": 16
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p1_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1920,
+        "month": 6,
+        "day": 18
+      },
+      "place": {
+        "name": "Egeskov kirke, Vejlby v/Fredericia",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p1_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1970,
+        "month": 12,
+        "day": 2
+      },
+      "place": {
+        "name": "Vodskov v/Ålborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p1_burial",
+      "type": "burial",
+      "label": "Burial",
+      "place": {
+        "name": "Vodskov kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_linnet"
+  ],
+  "familyIdAsChild": "f_hoey_christensen"
+}

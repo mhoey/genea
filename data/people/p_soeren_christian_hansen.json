@@ -1,0 +1,48 @@
+{
+  "id": "p_soeren_christian_hansen",
+  "names": [
+    {
+      "given": "Søren Christian",
+      "surname": "Hansen",
+      "display": "Søren Christian Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p73_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1925,
+        "month": 8,
+        "day": 8
+      },
+      "place": {
+        "name": "Sig, Torstrup Sogn, Ø. Horne Herred, Ribe amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p73_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1925,
+        "month": 8,
+        "day": 9
+      },
+      "place": {
+        "name": "Hjemmedøbt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_haahr"
+}

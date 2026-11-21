@@ -1,0 +1,62 @@
+{
+  "id": "p_mette_bjerremose_rasmussen",
+  "names": [
+    {
+      "given": "Mette Bjerremose",
+      "surname": "(Rasmussen)",
+      "display": "Mette Bjerremose (Rasmussen)"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p154_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1840,
+        "month": 10,
+        "day": 15
+      },
+      "place": {
+        "name": "Henne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p154_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p154_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p154_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1919,
+        "month": 7,
+        "day": 2
+      },
+      "place": {
+        "name": "Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_rasmussen"
+  ],
+  "familyIdAsChild": null
+}

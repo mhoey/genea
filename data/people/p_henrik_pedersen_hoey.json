@@ -1,0 +1,114 @@
+{
+  "id": "p_henrik_pedersen_hoey",
+  "names": [
+    {
+      "given": "Henrik Pedersen",
+      "surname": "Høy",
+      "display": "Henrik Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p46_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1827,
+        "month": 10,
+        "day": 12
+      },
+      "place": {
+        "name": "Alderhvile N.Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p46_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1827,
+        "month": 10,
+        "day": 13
+      },
+      "place": {
+        "name": "Hjemmedøbt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p46_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1842,
+        "month": 4,
+        "day": 3
+      },
+      "place": {
+        "name": "N.Nebel kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p46_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1854,
+        "month": 12,
+        "day": 30
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p46_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1902,
+        "month": 10,
+        "day": 8
+      },
+      "place": {
+        "name": "Skumsager Mark, Sønder Bork",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p46_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1902,
+        "month": 10,
+        "day": 13
+      },
+      "place": {
+        "name": "Sønder Bork Kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_christensen_63"
+  ],
+  "familyIdAsChild": "f_hoey_pedersen"
+}

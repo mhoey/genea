@@ -1,0 +1,82 @@
+{
+  "id": "p_anders_christian_hansen",
+  "names": [
+    {
+      "given": "Anders Christian",
+      "surname": "Hansen",
+      "display": "Anders Christian Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p41_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1853,
+        "month": 2,
+        "day": 1
+      },
+      "place": {
+        "name": "Sønder Lem",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p41_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1853,
+        "month": 3,
+        "day": 24
+      },
+      "place": {
+        "name": "Sønder Lem",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p41_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 3,
+        "day": 29
+      },
+      "place": {
+        "name": "Tebelgård Henne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p41_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 4,
+        "day": 1
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_christensen"
+  ],
+  "familyIdAsChild": null
+}

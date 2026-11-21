@@ -1,0 +1,48 @@
+{
+  "id": "p_peder_christian_pedersen_hoey",
+  "names": [
+    {
+      "given": "Peder Christian Pedersen",
+      "surname": "Høy",
+      "display": "Peder Christian Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p47_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1830,
+        "month": 8,
+        "day": 24
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p47_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1830,
+        "month": 8,
+        "day": 26
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_pedersen"
+}

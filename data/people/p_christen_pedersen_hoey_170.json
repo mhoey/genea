@@ -1,0 +1,54 @@
+{
+  "id": "p_christen_pedersen_hoey_170",
+  "names": [
+    {
+      "given": "Christen Pedersen",
+      "surname": "Høy",
+      "display": "Christen Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p170_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1859,
+        "month": 11,
+        "day": 31
+      },
+      "place": {
+        "name": "Skumsager Mark - Sønder Bork, N. Horne, Ringkøbing",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p170_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1895,
+        "month": 9,
+        "day": 15
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p170_burial",
+      "type": "burial",
+      "label": "Burial",
+      "place": {
+        "name": "Sønder Bork kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_christensen_63"
+}

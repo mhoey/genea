@@ -1,0 +1,62 @@
+{
+  "id": "p_christen_pedersen_hoey",
+  "names": [
+    {
+      "given": "Christen Pedersen",
+      "surname": "Høy",
+      "display": "Christen Pedersen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p48_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1833,
+        "month": 3,
+        "day": 13
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p48_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1833,
+        "month": 4,
+        "day": 21
+      },
+      "place": {
+        "name": "Nørre Nebel",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p48_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1913,
+        "month": 7,
+        "day": 21
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_kristensen"
+  ],
+  "familyIdAsChild": "f_hoey_pedersen"
+}

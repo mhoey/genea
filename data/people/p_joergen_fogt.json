@@ -1,0 +1,46 @@
+{
+  "id": "p_joergen_fogt",
+  "names": [
+    {
+      "given": "Jørgen",
+      "surname": "Fogt",
+      "display": "Jørgen Fogt"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p15_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1934,
+        "month": 8,
+        "day": 24
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p15_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1984,
+        "month": 8,
+        "day": 25
+      },
+      "place": {
+        "name": "Gråsten Rådhus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_fogt_johannesen"
+  ],
+  "familyIdAsChild": null
+}

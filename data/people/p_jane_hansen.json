@@ -1,0 +1,78 @@
+{
+  "id": "p_jane_hansen",
+  "names": [
+    {
+      "given": "Jane",
+      "surname": "Hansen",
+      "display": "Jane Hansen"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p13_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1979,
+        "month": 6,
+        "day": 12
+      },
+      "place": {
+        "name": "Viborg sygehus (Tange, Højbjerg sogn)",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p13_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1979,
+        "month": 9,
+        "day": 8
+      },
+      "place": {
+        "name": "Elsborg kirke Højbjerg sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p13_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1993,
+        "month": 5,
+        "day": 2
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p13_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 2004,
+        "month": 5,
+        "day": 29
+      },
+      "place": {
+        "name": "Vindum kirke Vindum sogn",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_hansen"
+  ],
+  "familyIdAsChild": "f_hansen_johannesen"
+}

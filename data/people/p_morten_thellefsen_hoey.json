@@ -1,0 +1,72 @@
+{
+  "id": "p_morten_thellefsen_hoey",
+  "names": [
+    {
+      "given": "Morten Thellefsen",
+      "surname": "Høy",
+      "display": "Morten Thellefsen Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p22_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1967,
+        "month": 5,
+        "day": 31
+      },
+      "place": {
+        "name": "Langenæs sogn, Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p22_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1967,
+        "month": 8,
+        "day": 6
+      },
+      "place": {
+        "name": "Langenæs kirke Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p22_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1981,
+        "month": 3,
+        "day": 29
+      },
+      "place": {
+        "name": "Holme kirke, Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p22_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_thyregod"
+  ],
+  "familyIdAsChild": "f_hoey_thellefsen"
+}

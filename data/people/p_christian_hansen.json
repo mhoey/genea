@@ -1,0 +1,26 @@
+{
+  "id": "p_christian_hansen",
+  "names": [
+    {
+      "given": "Christian",
+      "surname": "Hansen",
+      "display": "Christian Hansen"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p122_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2007
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_marianne"
+}

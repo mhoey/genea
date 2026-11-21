@@ -1,0 +1,52 @@
+{
+  "id": "p_bjarne_rosendal_borch",
+  "names": [
+    {
+      "given": "Bjarne Rosendal",
+      "surname": "Borch",
+      "display": "Bjarne Rosendal Borch"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p33_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1966,
+        "month": 4,
+        "day": 9
+      },
+      "place": {
+        "name": "Thorsted sogn, Hating Herred",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p33_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "sourceIds": []
+    },
+    {
+      "id": "e_p33_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1980,
+        "month": 5,
+        "day": 18
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_borch_hoey"
+  ],
+  "familyIdAsChild": null
+}

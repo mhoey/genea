@@ -1,0 +1,48 @@
+{
+  "id": "p_philip_thyregod_hoey",
+  "names": [
+    {
+      "given": "Philip Thyregod",
+      "surname": "Høy",
+      "display": "Philip Thyregod Høy"
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p134_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009,
+        "month": 10,
+        "day": 21
+      },
+      "place": {
+        "name": "Viby J",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p134_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 2009,
+        "month": 12,
+        "day": 27
+      },
+      "place": {
+        "name": "Viby kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_thyregod"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "p_kristian_ditlefsen",
+  "names": [
+    {
+      "given": "Kristian",
+      "surname": "Ditlefsen",
+      "display": "Kristian Ditlefsen"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p108_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1741,
+        "month": 10,
+        "day": 28
+      },
+      "place": {
+        "name": "Skærup v/Vejle",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": null
+}

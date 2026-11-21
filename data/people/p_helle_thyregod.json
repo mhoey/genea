@@ -1,0 +1,30 @@
+{
+  "id": "p_helle_thyregod",
+  "names": [
+    {
+      "given": "Helle",
+      "surname": "Thyregod",
+      "display": "Helle Thyregod"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p38_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1967,
+        "month": 11,
+        "day": 10
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_thyregod"
+  ],
+  "familyIdAsChild": null
+}

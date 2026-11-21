@@ -1,0 +1,66 @@
+{
+  "id": "p_inge_jensen",
+  "names": [
+    {
+      "given": "Inge",
+      "surname": "Jensen",
+      "display": "Inge Jensen"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p26_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1936,
+        "month": 5,
+        "day": 22
+      },
+      "place": {
+        "name": "Sct. Pouls Sogn Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p26_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1936,
+        "month": 10,
+        "day": 11
+      },
+      "place": {
+        "name": "Sct. Pouls kirke Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p26_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1950,
+        "month": 10,
+        "day": 1
+      },
+      "place": {
+        "name": "Åbyhøj kirke v/Århus",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hoey_jensen"
+  ],
+  "familyIdAsChild": null
+}

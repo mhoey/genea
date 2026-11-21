@@ -1,0 +1,80 @@
+{
+  "id": "p_johanne_botilde_hansen",
+  "names": [
+    {
+      "given": "Johanne Botilde",
+      "surname": "Hansen",
+      "display": "Johanne Botilde Hansen"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p45_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1882,
+        "month": 12,
+        "day": 4
+      },
+      "place": {
+        "name": "Tebelgård Henne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p45_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1883,
+        "month": 2,
+        "day": 18
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p45_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 4,
+        "day": 24
+      },
+      "place": {
+        "name": "Tebelgård Henne",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p45_burial",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 1886,
+        "month": 5,
+        "day": 2
+      },
+      "place": {
+        "name": "Henne kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hansen_christensen"
+}

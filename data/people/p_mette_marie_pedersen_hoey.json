@@ -1,0 +1,54 @@
+{
+  "id": "p_mette_marie_pedersen_hoey",
+  "names": [
+    {
+      "given": "Mette Marie Pedersen",
+      "surname": "Høy",
+      "display": "Mette Marie Pedersen Høy"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p172_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1867,
+        "month": 1,
+        "day": 15
+      },
+      "place": {
+        "name": "Skumsager Mark - Sønder Bork, N. Horne, Ringkøbing",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p172_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1880,
+        "month": 2,
+        "day": 24
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p172_burial",
+      "type": "burial",
+      "label": "Burial",
+      "place": {
+        "name": "Sønder Bork kirkegård",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_hoey_christensen_63"
+}

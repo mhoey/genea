@@ -1,0 +1,66 @@
+{
+  "id": "p_magda_haahr",
+  "names": [
+    {
+      "given": "Magda",
+      "surname": "Haahr",
+      "display": "Magda Haahr"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p71_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1903,
+        "month": 4,
+        "day": 20
+      },
+      "place": {
+        "name": "Harte v/Kolding",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p71_baptism",
+      "type": "baptism",
+      "label": "Baptism",
+      "date": {
+        "qualifier": "exact",
+        "year": 1903,
+        "month": 5,
+        "day": 17
+      },
+      "place": {
+        "name": "Harte kirke",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p71_confirmation",
+      "type": "confirmation",
+      "label": "Confirmation",
+      "date": {
+        "qualifier": "exact",
+        "year": 1914,
+        "month": 4,
+        "day": 22
+      },
+      "place": {
+        "name": "Skanderup Kirke, Anst Herred, Ribe Amt",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_hansen_haahr"
+  ],
+  "familyIdAsChild": "f_haahr_joergensen"
+}
