@@ -21,7 +21,7 @@ export function layoutAll(graphStore) {
   const families = graphStore.getAllFamilies();
 
   if (people.length === 0) {
-    return { nodes: [], families: [], edges: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0, width: 0, height: 0 } };
+    return { nodes: [], families: [], edges: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0, width: 0, height: 0 }, panels: [] };
   }
 
   // 1. Calculate generational ranks for all people using bidirectional propagation
@@ -440,6 +440,28 @@ export function layoutAll(graphStore) {
     maxY = 600;
   }
 
+  // 8. Generate horizontal generation panels
+  const panels = [];
+  if (sortedGens.length > 0 && nodes.length > 0) {
+    const minGen = sortedGens[0];
+    const maxGen = sortedGens[sortedGens.length - 1];
+    const panelX = minX - 10000;
+    const panelWidth = (maxX - minX) + 20000;
+
+    for (let gen = minGen; gen <= maxGen; gen++) {
+      const panelY = gen * TIER_HEIGHT + 40 - TIER_GAP / 2;
+      panels.push({
+        id: `gen_panel_${gen}`,
+        generation: gen,
+        isEven: Math.abs(gen) % 2 === 0,
+        x: panelX,
+        y: panelY,
+        width: panelWidth,
+        height: TIER_HEIGHT
+      });
+    }
+  }
+
   return {
     nodes,
     families: familyNodes,
@@ -451,7 +473,8 @@ export function layoutAll(graphStore) {
       maxY: maxY + 40,
       width: (maxX - minX) + 80,
       height: (maxY - minY) + 80
-    }
+    },
+    panels
   };
 }
 
@@ -641,6 +664,34 @@ export function layoutHourglass(graphStore, focusPersonId) {
     maxY = 300;
   }
 
+  // Generate horizontal generation panels
+  const panels = [];
+  if (nodes.length > 0) {
+    let minGen = 0;
+    let maxGen = 0;
+    for (const n of nodes) {
+      const g = Math.round(n.y / TIER_HEIGHT);
+      if (g < minGen) minGen = g;
+      if (g > maxGen) maxGen = g;
+    }
+
+    const panelX = minX - 10000;
+    const panelWidth = (maxX - minX) + 20000;
+
+    for (let gen = minGen; gen <= maxGen; gen++) {
+      const panelY = gen * TIER_HEIGHT - TIER_GAP / 2;
+      panels.push({
+        id: `gen_panel_hg_${gen}`,
+        generation: gen,
+        isEven: Math.abs(gen) % 2 === 0,
+        x: panelX,
+        y: panelY,
+        width: panelWidth,
+        height: TIER_HEIGHT
+      });
+    }
+  }
+
   return {
     nodes,
     families: familyNodes,
@@ -652,6 +703,7 @@ export function layoutHourglass(graphStore, focusPersonId) {
       maxY: maxY + 40,
       width: (maxX - minX) + 80,
       height: (maxY - minY) + 80
-    }
+    },
+    panels
   };
 }

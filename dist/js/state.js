@@ -15,7 +15,7 @@ export class AppState {
     this.options = options;
 
     this.selectedPersonId = null;
-    this.viewMode = 'hourglass'; // 'hourglass' or 'network'
+    this.viewMode = 'network'; // 'network' or 'hourglass'
 
     this._bindHashChange();
   }
