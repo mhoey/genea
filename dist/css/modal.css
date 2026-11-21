@@ -1,0 +1,366 @@
+/* modal.css - Person detail modal dialog, timeline, and family relation styling */
+
+.person-modal {
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-main);
+  box-shadow: var(--shadow-xl);
+  width: 90vw;
+  max-width: 640px;
+  max-height: 85vh;
+  outline: none;
+  overflow: hidden;
+}
+
+.person-modal::backdrop {
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.modal-title-group h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.modal-close-btn:hover {
+  color: var(--text-main);
+  background-color: var(--border-color-subtle);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: capitalize;
+}
+
+.badge.sex-male {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #2563eb;
+}
+
+.badge.sex-female {
+  background-color: rgba(236, 72, 153, 0.15);
+  color: #db2777;
+}
+
+.badge.sex-intersex {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+}
+
+.badge.sex-unknown {
+  background-color: rgba(100, 116, 139, 0.15);
+  color: #475569;
+}
+
+.badge.status-living {
+  background-color: rgba(22, 163, 74, 0.15);
+  color: #16a34a;
+}
+
+.badge.status-deceased {
+  background-color: rgba(100, 116, 139, 0.15);
+  color: #64748b;
+}
+
+.badge.badge-source {
+  background-color: var(--border-color-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  font-size: 0.6875rem;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-section h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Details Table */
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.details-table tr {
+  border-bottom: 1px solid var(--border-color-subtle);
+}
+
+.details-table tr:last-child {
+  border-bottom: none;
+}
+
+.details-table th {
+  text-align: left;
+  width: 32%;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.details-table td {
+  padding: 0.5rem 0;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Events Timeline */
+.events-timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.event-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.25rem - 5px);
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid var(--bg-surface-elevated);
+}
+
+.event-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.event-date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.event-place {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.event-desc {
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  margin-top: 0.25rem;
+}
+
+.event-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+/* Family Relations Grid */
+.relations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.relation-card {
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.875rem;
+}
+
+.relation-card h4 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.relation-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.link-person {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-person:hover {
+  background-color: var(--color-primary-subtle);
+  border-color: var(--color-primary);
+}
+
+.empty-text, .empty-state {
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+  font-style: italic;
+}
+
+/* Notes & Sources */
+.modal-notes {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sources-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.source-item {
+  font-size: 0.8125rem;
+  border-left: 2px solid var(--color-primary);
+  padding-left: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.source-citation {
+  color: var(--text-muted);
+}
+
+.source-repo {
+  color: var(--text-subtle);
+}
+
+.source-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.12s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color-subtle);
+}
