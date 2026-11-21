@@ -1,0 +1,33 @@
+{
+  "id": "p_thomas_doe",
+  "names": [
+    {
+      "given": "Thomas",
+      "surname": "Doe",
+      "suffix": "Jr.",
+      "display": "Thomas Doe Jr."
+    }
+  ],
+  "sex": "male",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p6_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1955,
+        "month": 12,
+        "day": 3
+      },
+      "place": {
+        "name": "Brooklyn, New York",
+        "country": "USA"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_doe_johnson"
+}

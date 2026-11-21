@@ -1,0 +1,45 @@
+{
+  "id": "p_sarah_johnson",
+  "names": [
+    {
+      "given": "Sarah",
+      "surname": "Doe",
+      "maidenOrBirthSurname": "Johnson",
+      "display": "Sarah Doe (née Johnson)"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p5_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "about",
+        "year": 1927
+      },
+      "place": {
+        "name": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p5_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2012,
+        "month": 8,
+        "day": 30
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_doe_johnson"
+  ],
+  "familyIdAsChild": null
+}

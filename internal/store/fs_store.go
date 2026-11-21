@@ -97,11 +97,14 @@ func (s *FSStore) UpdatePersonAttribute(id string, attr string, value any) (*Per
 
 	switch attr {
 	case "sex":
-		v, ok := value.(string)
-		if !ok {
+		switch v := value.(type) {
+		case Sex:
+			p.Sex = v
+		case string:
+			p.Sex = Sex(v)
+		default:
 			return nil, fmt.Errorf("sex must be string")
 		}
-		p.Sex = v
 	case "living":
 		v, ok := value.(bool)
 		if !ok {
@@ -240,7 +243,7 @@ func (s *FSStore) AddSpouseRelation(familyID, personID string) error {
 
 func (s *FSStore) AddChildRelation(familyID, childPersonID, relKind string) error {
 	if relKind == "" {
-		relKind = "biological"
+		relKind = string(ChildRelBiological)
 	}
 	f, err := s.GetFamily(familyID)
 	if err != nil {
@@ -261,7 +264,7 @@ func (s *FSStore) AddChildRelation(familyID, childPersonID, relKind string) erro
 	if !exists {
 		f.Children = append(f.Children, ChildLink{
 			PersonID:               childPersonID,
-			RelationshipToPartners: relKind,
+			RelationshipToPartners: ChildRelationship(relKind),
 		})
 		if err := writeJSONAtomic(s.familyPath(familyID), f); err != nil {
 			return err

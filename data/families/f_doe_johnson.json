@@ -1,0 +1,35 @@
+{
+  "id": "f_doe_johnson",
+  "partnerIds": [
+    "p_robert_doe",
+    "p_sarah_johnson"
+  ],
+  "children": [
+    {
+      "personId": "p_thomas_doe",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_alice_doe",
+      "relationshipToPartners": "adopted"
+    }
+  ],
+  "events": [
+    {
+      "id": "e_f2_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1952,
+        "month": 10,
+        "day": 25
+      },
+      "place": {
+        "name": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "sourceIds": []
+    }
+  ]
+}

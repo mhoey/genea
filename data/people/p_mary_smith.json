@@ -1,0 +1,58 @@
+{
+  "id": "p_mary_smith",
+  "names": [
+    {
+      "given": "Mary",
+      "surname": "Doe",
+      "maidenOrBirthSurname": "Smith",
+      "display": "Mary Doe (née Smith)"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p2_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "about",
+        "year": 1898,
+        "month": 8
+      },
+      "place": {
+        "name": "New York, New York",
+        "country": "USA",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "sourceIds": [
+        "s_census_1900"
+      ]
+    },
+    {
+      "id": "e_p2_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1970,
+        "month": 5,
+        "day": 4
+      },
+      "place": {
+        "name": "New York, New York",
+        "country": "USA",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "sourceIds": [
+        "s_grave_cemetery"
+      ]
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_doe_smith"
+  ],
+  "familyIdAsChild": null
+}

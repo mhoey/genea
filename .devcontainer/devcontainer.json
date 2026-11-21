@@ -1,0 +1,17 @@
+{
+  "name": "Go Development (Zed)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "remoteUser": "zed",
+  "forwardPorts": [8080],
+  "containerEnv": {
+    "CGO_ENABLED": "1"
+  },
+  "customizations": {
+    "zed": {
+      "extensions": []
+    }
+  }
+}

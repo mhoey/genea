@@ -1,0 +1,37 @@
+{
+  "id": "f_doe_smith",
+  "partnerIds": [
+    "p_john_doe",
+    "p_mary_smith"
+  ],
+  "children": [
+    {
+      "personId": "p_robert_doe",
+      "relationshipToPartners": "biological"
+    },
+    {
+      "personId": "p_emily_doe",
+      "relationshipToPartners": "biological"
+    }
+  ],
+  "events": [
+    {
+      "id": "e_f1_marriage",
+      "type": "marriage",
+      "label": "Marriage",
+      "date": {
+        "qualifier": "exact",
+        "year": 1920,
+        "month": 6,
+        "day": 14
+      },
+      "place": {
+        "name": "New York, New York",
+        "country": "USA"
+      },
+      "sourceIds": [
+        "s_church_st_mary"
+      ]
+    }
+  ]
+}

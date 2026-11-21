@@ -1,0 +1,59 @@
+{
+  "id": "p_john_doe",
+  "names": [
+    {
+      "given": "John",
+      "surname": "Doe",
+      "display": "John Doe"
+    }
+  ],
+  "sex": "male",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p1_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1895,
+        "month": 3,
+        "day": 15
+      },
+      "place": {
+        "name": "Boston, Massachusetts",
+        "country": "USA",
+        "lat": 42.3601,
+        "lng": -71.0589
+      },
+      "sourceIds": [
+        "s_census_1900"
+      ]
+    },
+    {
+      "id": "e_p1_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "exact",
+        "year": 1965,
+        "month": 11,
+        "day": 20
+      },
+      "place": {
+        "name": "New York, New York",
+        "country": "USA",
+        "lat": 40.7128,
+        "lng": -74.006
+      },
+      "sourceIds": [
+        "s_grave_cemetery"
+      ]
+    }
+  ],
+  "familyIdsAsSpouse": [
+    "f_doe_smith"
+  ],
+  "familyIdAsChild": null,
+  "notes": "Immigrated to New York in 1915."
+}

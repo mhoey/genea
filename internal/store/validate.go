@@ -19,7 +19,7 @@ func ValidatePerson(p Person) error {
 		return fmt.Errorf("person %s must have at least one name with a given name", p.ID)
 	}
 	switch p.Sex {
-	case "female", "male", "intersex", "unknown":
+	case SexFemale, SexMale, SexIntersex, SexUnknown:
 	default:
 		return fmt.Errorf("person %s has invalid sex %q", p.ID, p.Sex)
 	}

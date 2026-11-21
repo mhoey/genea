@@ -1,0 +1,6 @@
+.git
+.zed
+node_modules
+bin
+dist
+tmp

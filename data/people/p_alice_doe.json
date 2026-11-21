@@ -1,0 +1,32 @@
+{
+  "id": "p_alice_doe",
+  "names": [
+    {
+      "given": "Alice",
+      "surname": "Doe",
+      "display": "Alice Doe"
+    }
+  ],
+  "sex": "female",
+  "living": true,
+  "events": [
+    {
+      "id": "e_p7_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1960,
+        "month": 4,
+        "day": 18
+      },
+      "place": {
+        "name": "Chicago, Illinois",
+        "country": "USA"
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_doe_johnson"
+}

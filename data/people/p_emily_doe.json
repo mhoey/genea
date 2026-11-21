@@ -1,0 +1,42 @@
+{
+  "id": "p_emily_doe",
+  "names": [
+    {
+      "given": "Emily",
+      "surname": "Doe",
+      "display": "Emily Doe"
+    }
+  ],
+  "sex": "female",
+  "living": false,
+  "events": [
+    {
+      "id": "e_p4_birth",
+      "type": "birth",
+      "label": "Birth",
+      "date": {
+        "qualifier": "exact",
+        "year": 1928,
+        "month": 9,
+        "day": 22
+      },
+      "place": {
+        "name": "New York, New York",
+        "country": "USA"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_p4_death",
+      "type": "death",
+      "label": "Death",
+      "date": {
+        "qualifier": "before",
+        "year": 2010
+      },
+      "sourceIds": []
+    }
+  ],
+  "familyIdsAsSpouse": [],
+  "familyIdAsChild": "f_doe_smith"
+}
