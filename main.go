@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mhoey/genea/internal/site"
 	"github.com/mhoey/genea/internal/store"
 )
 
 func main() {
 	dataDir := flag.String("data", "./data", "Path to data directory")
 	validateOnly := flag.Bool("validate", false, "Validate data integrity and exit")
+	exportWeb := flag.String("export-web", "", "Export static interactive web viewer to target directory")
 
 	flag.Parse()
 
@@ -26,6 +28,26 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Println("All records and graph relations are valid.")
+		return
+	}
+
+	if *exportWeb != "" {
+		if err := fsStore.ValidateAll(); err != nil {
+			fmt.Fprintf(os.Stderr, "Validation failed prior to export: %v\n", err)
+			os.Exit(1)
+		}
+
+		if err := site.GenerateSite(fsStore, *exportWeb); err != nil {
+			fmt.Fprintf(os.Stderr, "Error generating static site: %v\n", err)
+			os.Exit(1)
+		}
+
+		people, _ := fsStore.ListPeople()
+		families, _ := fsStore.ListFamilies()
+		sources, _ := fsStore.ListSources()
+
+		fmt.Printf("Successfully generated static web application in: %s\n", *exportWeb)
+		fmt.Printf("Exported: %d people, %d families, %d sources\n", len(people), len(families), len(sources))
 		return
 	}
 

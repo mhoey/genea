@@ -1,0 +1,98 @@
+/* tree.css - SVG Tree nodes, connection edges, and canvas typography */
+
+/* Connection Edges */
+.edge {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.15s ease, stroke-width 0.15s ease;
+}
+
+.edge-marriage {
+  stroke: #94a3b8;
+  stroke-width: 2px;
+  stroke-dasharray: 4, 3;
+}
+
+.edge-child {
+  stroke: #64748b;
+  stroke-width: 2px;
+}
+
+[data-theme="dark"] .edge-child {
+  stroke: #475569;
+}
+
+[data-theme="dark"] .edge-marriage {
+  stroke: #64748b;
+}
+
+/* Node Cards */
+.node-card {
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease;
+}
+
+.node-rect {
+  fill: var(--bg-surface);
+  stroke: var(--border-color);
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: stroke 0.15s ease, stroke-width 0.15s ease, filter 0.15s ease;
+}
+
+.node-card:hover .node-rect {
+  stroke: var(--color-primary);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.12));
+}
+
+.node-card.selected .node-rect {
+  stroke: var(--color-primary);
+  stroke-width: 2.5px;
+  filter: drop-shadow(0 0 12px rgba(37, 99, 235, 0.45));
+}
+
+.node-card:focus-visible .node-rect {
+  stroke: var(--color-primary);
+  stroke-width: 2px;
+}
+
+/* Node Text Styles */
+.node-name {
+  fill: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.node-sex-badge {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.node-divider {
+  stroke: var(--border-color);
+  stroke-width: 1px;
+}
+
+.node-date {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  fill: var(--text-muted);
+  user-select: none;
+}
+
+.node-death.living {
+  fill: #16a34a;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .node-death.living {
+  fill: #4ade80;
+}
