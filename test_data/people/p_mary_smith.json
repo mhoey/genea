@@ -8,7 +8,7 @@
       "display": "Mary Doe (née Smith)"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": false,
   "events": [
     {

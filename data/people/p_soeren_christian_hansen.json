@@ -7,8 +7,8 @@
       "display": "Søren Christian Hansen"
     }
   ],
-  "sex": "male",
-  "living": true,
+  "gender": "male",
+  "living": false,
   "events": [
     {
       "id": "e_p73_birth",

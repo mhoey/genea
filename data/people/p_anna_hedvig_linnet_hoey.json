@@ -7,8 +7,8 @@
       "display": "Anna Hedvig Linnet Høy"
     }
   ],
-  "sex": "female",
-  "living": true,
+  "gender": "female",
+  "living": false,
   "events": [
     {
       "id": "e_p5_birth",
@@ -65,6 +65,37 @@
       "date": {
         "qualifier": "exact",
         "year": 1952
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_death_4",
+      "type": "death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2023,
+        "month": 4,
+        "day": 8
+      },
+      "place": {
+        "name": "Aarhus friplejehjem, Tranbjerg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_burial_6",
+      "type": "burial",
+      "label": "Burial",
+      "date": {
+        "qualifier": "exact",
+        "year": 2023,
+        "month": 4,
+        "day": 20
+      },
+      "place": {
+        "name": "Tranbjerg Kirke",
+        "country": "Danmark"
       },
       "sourceIds": []
     }

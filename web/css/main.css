@@ -23,6 +23,10 @@
   --color-intersex: #8b5cf6;
   --color-unknown: #64748b;
 
+  --bg-generation-even: rgba(226, 232, 240, 0.45);
+  --bg-generation-odd: rgba(255, 255, 255, 0.5);
+  --border-generation: rgba(226, 232, 240, 0.7);
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
@@ -44,6 +48,10 @@
   --color-primary: #3b82f6;
   --color-primary-hover: #60a5fa;
   --color-primary-subtle: #1e293b;
+
+  --bg-generation-even: rgba(255, 255, 255, 0.03);
+  --bg-generation-odd: transparent;
+  --border-generation: rgba(255, 255, 255, 0.05);
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);

@@ -7,7 +7,7 @@
       "display": "Jane Hansen"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": true,
   "events": [
     {

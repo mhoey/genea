@@ -7,8 +7,8 @@
       "display": "Elsa Larsen"
     }
   ],
-  "sex": "female",
-  "living": true,
+  "gender": "female",
+  "living": false,
   "events": [
     {
       "id": "e_p23_birth",

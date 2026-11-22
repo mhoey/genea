@@ -7,14 +7,31 @@ import (
 
 	"github.com/mhoey/genea/internal/site"
 	"github.com/mhoey/genea/internal/store"
+	"github.com/mhoey/genea/internal/updateperson"
 )
 
 func main() {
+	flag.Usage = func() {
+		fmt.Println("==================================================")
+		fmt.Println("  Genea — Local-First Genealogy Archive")
+		fmt.Println("==================================================")
+		fmt.Println("Usage: genea [options]")
+		fmt.Println("\nAvailable options:")
+		flag.PrintDefaults()
+	}
+
 	dataDir := flag.String("data", "./data", "Path to data directory")
 	validateOnly := flag.Bool("validate", false, "Validate data integrity and exit")
 	exportWeb := flag.String("export-web", "", "Export static interactive web viewer to target directory")
+	updatePerson := flag.Bool("updateperson", false, "Update a person record interactively")
+	showSummary := flag.Bool("summary", false, "Display archive summary and entity statistics")
 
 	flag.Parse()
+
+	if len(os.Args) == 1 {
+		flag.Usage()
+		return
+	}
 
 	fsStore, err := store.NewFSStore(*dataDir)
 	if err != nil {
@@ -51,7 +68,18 @@ func main() {
 		return
 	}
 
-	printSummary(fsStore, *dataDir)
+	if *updatePerson {
+		if err := updateperson.UpdatePersonCommand(fsStore); err != nil {
+			fmt.Fprintf(os.Stderr, "Error updating person: %v\n", err)
+			os.Exit(1)
+		}
+		return
+	}
+
+	if *showSummary || (!*validateOnly && *exportWeb == "" && !*updatePerson) {
+		printSummary(fsStore, *dataDir)
+		return
+	}
 }
 
 func printSummary(s *store.FSStore, dataDir string) {
@@ -103,7 +131,7 @@ func printSummary(s *store.FSStore, dataDir string) {
 		if p.Living {
 			status = "living"
 		}
-		fmt.Printf("  - [%s] %s (%s, %s)\n", p.ID, displayName, p.Sex, status)
+		fmt.Printf("  - [%s] %s (%s, %s)\n", p.ID, displayName, p.Gender, status)
 	}
 
 	fmt.Printf("\nFamilies in Archive:\n")

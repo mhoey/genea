@@ -7,8 +7,8 @@
       "display": "Niels Linnet Høy"
     }
   ],
-  "sex": "male",
-  "living": true,
+  "gender": "male",
+  "living": false,
   "events": [
     {
       "id": "e_p6_birth",

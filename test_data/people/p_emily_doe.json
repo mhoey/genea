@@ -7,7 +7,7 @@
       "display": "Emily Doe"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": false,
   "events": [
     {

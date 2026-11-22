@@ -7,7 +7,7 @@
       "display": "Marianne"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": true,
   "events": [
     {

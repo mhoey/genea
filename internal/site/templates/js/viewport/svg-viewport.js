@@ -18,7 +18,7 @@ export class SVGViewport {
       h: 800
     };
 
-    this.minZoom = 0.1;
+    this.minZoom = 0.02;
     this.maxZoom = 3.0;
     this.initialScale = 1.0;
 
@@ -210,15 +210,17 @@ export class SVGViewport {
 
   fitToBox(box, margin = 40) {
     const rect = this.svg.getBoundingClientRect();
+    const width = rect.width || window.innerWidth || 1200;
+    const height = rect.height || (window.innerHeight - 56) || 800;
     const boxW = (box.width || 800) + margin * 2;
     const boxH = (box.height || 600) + margin * 2;
 
-    const scaleX = rect.width / boxW;
-    const scaleY = rect.height / boxH;
+    const scaleX = width / boxW;
+    const scaleY = height / boxH;
     const fitScale = Math.min(scaleX, scaleY, 1.2); // don't over-zoom small trees
 
-    this.viewBox.w = rect.width / fitScale;
-    this.viewBox.h = rect.height / fitScale;
+    this.viewBox.w = width / fitScale;
+    this.viewBox.h = height / fitScale;
     this.viewBox.x = (box.minX - margin) + (boxW - this.viewBox.w) / 2;
     this.viewBox.y = (box.minY - margin) + (boxH - this.viewBox.h) / 2;
 

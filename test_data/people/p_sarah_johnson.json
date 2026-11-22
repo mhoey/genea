@@ -8,7 +8,7 @@
       "display": "Sarah Doe (née Johnson)"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": false,
   "events": [
     {

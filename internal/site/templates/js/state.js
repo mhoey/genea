@@ -15,7 +15,7 @@ export class AppState {
     this.options = options;
 
     this.selectedPersonId = null;
-    this.viewMode = 'hourglass'; // 'hourglass' or 'network'
+    this.viewMode = 'network'; // 'network' or 'hourglass'
 
     this._bindHashChange();
   }
@@ -124,7 +124,7 @@ export class AppState {
       if (matches.length === 0) {
         resultsContainerEl.appendChild(createHTML('div', {
           className: 'search-empty',
-          textContent: 'No matching people found'
+          textContent: 'Ingen personer fundet'
         }));
         resultsContainerEl.classList.add('active');
         return;
@@ -137,7 +137,7 @@ export class AppState {
         const deathYear = this.graphStore.getDeathYear(p);
         let yearSpan = '';
         if (birthYear || deathYear) {
-          yearSpan = ` (${birthYear || '?'} – ${p.living ? 'Living' : (deathYear || '?')})`;
+          yearSpan = ` (${birthYear || '?'} – ${p.living ? 'Levende' : (deathYear || '?')})`;
         }
 
         const li = createHTML('li', {

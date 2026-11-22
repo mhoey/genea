@@ -1,5 +1,20 @@
 /* tree.css - SVG Tree nodes, connection edges, and canvas typography */
 
+/* Generation Panels */
+.generation-panel {
+  pointer-events: none;
+  stroke: var(--border-generation);
+  stroke-width: 1px;
+}
+
+.generation-panel-even {
+  fill: var(--bg-generation-even);
+}
+
+.generation-panel-odd {
+  fill: var(--bg-generation-odd);
+}
+
 /* Connection Edges */
 .edge {
   fill: none;
@@ -69,6 +84,7 @@
   user-select: none;
 }
 
+.node-gender-badge,
 .node-sex-badge {
   font-family: var(--font-sans);
   font-size: 14px;

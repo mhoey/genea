@@ -107,11 +107,15 @@ class GeneaApp {
       onViewModeChange: (mode) => {
         this.updateViewModeButtons(mode);
         this.renderTree();
-        const selId = this.state.selectedPersonId;
-        if (selId) {
-          this.centerOnPerson(selId);
-        } else {
+        if (mode === 'network') {
           this.viewport.fitToBox(this.currentLayout.bounds, 40);
+        } else {
+          const selId = this.state.selectedPersonId;
+          if (selId) {
+            this.centerOnPerson(selId);
+          } else {
+            this.viewport.fitToBox(this.currentLayout.bounds, 40);
+          }
         }
       },
       onFocusUniqueMatch: (personId) => {
@@ -136,9 +140,11 @@ class GeneaApp {
     this.state.initFromHash();
     this.renderTree();
 
-    const initialPersonId = this.state.selectedPersonId;
-    if (initialPersonId && this.nodePositions.has(initialPersonId)) {
-      this.centerOnPerson(initialPersonId);
+    const hashParams = new URLSearchParams(window.location.hash.slice(1));
+    const explicitPerson = hashParams.get('person');
+
+    if (explicitPerson && this.nodePositions.has(explicitPerson)) {
+      this.centerOnPerson(explicitPerson);
     } else if (this.currentLayout) {
       this.viewport.fitToBox(this.currentLayout.bounds, 40);
     }
@@ -207,10 +213,28 @@ class GeneaApp {
     }
 
     // Render SVG layers
+    const panelsLayer = document.getElementById('panels-layer');
     const edgesLayer = document.getElementById('edges-layer');
     const nodesLayer = document.getElementById('nodes-layer');
+    if (panelsLayer) clearChildren(panelsLayer);
     clearChildren(edgesLayer);
     clearChildren(nodesLayer);
+
+    // Generation Panels
+    if (panelsLayer && this.currentLayout.panels) {
+      for (const panel of this.currentLayout.panels) {
+        const rectEl = createSVG('rect', {
+          id: panel.id,
+          class: `generation-panel ${panel.isEven ? 'generation-panel-even' : 'generation-panel-odd'}`,
+          x: panel.x,
+          y: panel.y,
+          width: panel.width,
+          height: panel.height,
+          'data-generation': panel.generation
+        });
+        panelsLayer.appendChild(rectEl);
+      }
+    }
 
     // Edges
     for (const edge of edges) {

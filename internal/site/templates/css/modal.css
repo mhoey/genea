@@ -77,21 +77,25 @@
   text-transform: capitalize;
 }
 
+.badge.gender-male,
 .badge.sex-male {
   background-color: rgba(59, 130, 246, 0.15);
   color: #2563eb;
 }
 
+.badge.gender-female,
 .badge.sex-female {
   background-color: rgba(236, 72, 153, 0.15);
   color: #db2777;
 }
 
+.badge.gender-intersex,
 .badge.sex-intersex {
   background-color: rgba(139, 92, 246, 0.15);
   color: #7c3aed;
 }
 
+.badge.gender-unknown,
 .badge.sex-unknown {
   background-color: rgba(100, 116, 139, 0.15);
   color: #475569;

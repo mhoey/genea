@@ -43,14 +43,22 @@ genea/
 The core executable provides flags for archive operations:
 
 ```bash
+# List available options
+genea
+
 # Display archive statistics and summaries
-genea -data ./data
+genea -summary
+# or specify custom data directory
+genea -data ./data -summary
 
 # Validate graph integrity and relation consistency
 genea -data ./data -validate
 
 # Export standalone interactive static web application to target directory
 genea -data ./data -export-web ./dist
+
+# Update person records interactively
+genea -data ./data -updateperson
 ```
 
 ### Validation Pre-requisite

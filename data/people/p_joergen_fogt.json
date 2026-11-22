@@ -7,8 +7,8 @@
       "display": "Jørgen Fogt"
     }
   ],
-  "sex": "male",
-  "living": true,
+  "gender": "male",
+  "living": false,
   "events": [
     {
       "id": "e_p15_birth",

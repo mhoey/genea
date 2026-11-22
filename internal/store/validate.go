@@ -18,14 +18,21 @@ func ValidatePerson(p Person) error {
 	if len(p.Names) == 0 || p.Names[0].Given == "" {
 		return fmt.Errorf("person %s must have at least one name with a given name", p.ID)
 	}
-	switch p.Sex {
-	case SexFemale, SexMale, SexIntersex, SexUnknown:
+	switch p.Gender {
+	case GenderFemale, GenderMale, GenderIntersex, GenderUnknown:
 	default:
-		return fmt.Errorf("person %s has invalid sex %q", p.ID, p.Sex)
+		return fmt.Errorf("person %s has invalid gender %q", p.ID, p.Gender)
 	}
+	singleEvents := make(map[LifeEventType]bool)
 	for _, ev := range p.Events {
 		if err := ValidateEvent(ev); err != nil {
 			return fmt.Errorf("person %s: %w", p.ID, err)
+		}
+		if IsSingleInstanceEvent(ev.Type) {
+			if singleEvents[ev.Type] {
+				return fmt.Errorf("person %s cannot have multiple %s events", p.ID, ev.Type)
+			}
+			singleEvents[ev.Type] = true
 		}
 	}
 	return nil

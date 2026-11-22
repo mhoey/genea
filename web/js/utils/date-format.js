@@ -1,6 +1,6 @@
 // date-format.js - Formatting utilities for GeneaDate and LifeEvents
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
 
 /**
  * Formats a GeneaDate object into a user-friendly string.
@@ -34,20 +34,20 @@ export function formatGeneaDate(date, options = {}) {
   const qualifier = date.qualifier || 'exact';
   switch (qualifier) {
     case 'about':
-      return `abt. ${datePart}`;
+      return `ca. ${datePart}`;
     case 'before':
-      return `bef. ${datePart}`;
+      return `før ${datePart}`;
     case 'after':
-      return `aft. ${datePart}`;
+      return `efter ${datePart}`;
     case 'between':
       if (date.endYear) {
-        return `bet. ${datePart} – ${date.endYear}`;
+        return `ml. ${datePart} – ${date.endYear}`;
       }
-      return `bet. ${datePart}`;
+      return `ml. ${datePart}`;
     case 'exact':
     default:
       if (options.showExactQualifier) {
-        return `${datePart} (exact)`;
+        return `${datePart} (nøjagtig)`;
       }
       return datePart;
   }
@@ -61,7 +61,7 @@ export function formatGeneaDate(date, options = {}) {
 export function formatNodeBirth(person) {
   const birthEvent = (person.events || []).find(e => e.type === 'birth');
   if (!birthEvent) {
-    return '* Unknown';
+    return '* Ukendt';
   }
 
   const dateStr = formatGeneaDate(birthEvent.date);
@@ -74,22 +74,22 @@ export function formatNodeBirth(person) {
   } else if (placeName) {
     return `* (${placeName})`;
   }
-  return '* Unknown';
+  return '* Ukendt';
 }
 
 /**
  * Returns formatted death/living string for a node card.
  * @param {Object} person
- * @returns {string} e.g. "† 06 Mar 1980 (Århus)" or "Living"
+ * @returns {string} e.g. "† 06 Mar 1980 (Århus)" or "Levende"
  */
 export function formatNodeDeath(person) {
   if (person.living) {
-    return 'Living';
+    return 'Levende';
   }
 
   const deathEvent = (person.events || []).find(e => e.type === 'death');
   if (!deathEvent) {
-    return '† Deceased';
+    return '† Død';
   }
 
   const dateStr = formatGeneaDate(deathEvent.date);
@@ -102,5 +102,5 @@ export function formatNodeDeath(person) {
   } else if (placeName) {
     return `† (${placeName})`;
   }
-  return '† Deceased';
+  return '† Død';
 }

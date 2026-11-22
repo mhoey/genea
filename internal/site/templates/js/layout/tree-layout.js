@@ -1,4 +1,4 @@
-// tree-layout.js - Genealogical DAG layout engine for Hourglass and Full Network views
+// tree-layout.js - Untangled Genealogical DAG layout engine for Network and Hourglass views
 
 import { createCurvedConnector, createHorizontalConnector } from './bezier.js';
 
@@ -11,6 +11,8 @@ export const CLUSTER_SPACING_X = 64;
 
 /**
  * Calculates a full generational network layout containing all people and families.
+ * Uses bidirectional generational ranking, nuclear family clustering, and
+ * two-way Sugiyama barycenter sweeps to eliminate edge crossings and overlapping nodes.
  * @param {GraphStore} graphStore
  * @returns {Object} Layout result { nodes, families, edges, bounds }
  */
@@ -19,46 +21,95 @@ export function layoutAll(graphStore) {
   const families = graphStore.getAllFamilies();
 
   if (people.length === 0) {
-    return { nodes: [], families: [], edges: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0, width: 0, height: 0 } };
+    return { nodes: [], families: [], edges: [], bounds: { minX: 0, minY: 0, maxX: 0, maxY: 0, width: 0, height: 0 }, panels: [] };
   }
 
-  // 1. Calculate generational ranks for all people
+  // 1. Calculate generational ranks for all people using bidirectional propagation
   const genMap = new Map();
   for (const p of people) {
     genMap.set(p.id, 0);
   }
 
-  // Iterative relaxation to establish generational hierarchy
-  for (let iter = 0; iter < 40; iter++) {
+  // Fast lookups
+  const familyById = new Map();
+  const childToParentFamilyId = new Map();
+  const familiesByPartnerId = new Map();
+
+  for (const f of families) {
+    familyById.set(f.id, f);
+    for (const c of (f.children || [])) {
+      childToParentFamilyId.set(c.personId, f.id);
+    }
+    for (const pId of (f.partnerIds || [])) {
+      if (!familiesByPartnerId.has(pId)) familiesByPartnerId.set(pId, []);
+      familiesByPartnerId.get(pId).push(f);
+    }
+  }
+
+  // Iterative bidirectional relaxation to establish true generational hierarchy
+  for (let iter = 0; iter < 100; iter++) {
     let changed = false;
 
-    // Children must be at least 1 generation below both parents
     for (const f of families) {
-      let maxParentGen = 0;
-      for (const pId of (f.partnerIds || [])) {
-        const pGen = genMap.get(pId) || 0;
-        if (pGen > maxParentGen) maxParentGen = pGen;
-      }
+      const partnerIds = f.partnerIds || [];
+      const children = f.children || [];
 
-      // Spouses should ideally share the same generational tier
-      for (const pId of (f.partnerIds || [])) {
-        if (genMap.get(pId) < maxParentGen) {
-          genMap.set(pId, maxParentGen);
-          changed = true;
+      if (partnerIds.length > 0) {
+        // A. Spouses should share the same generational tier
+        let maxParentGen = 0;
+        for (const pId of partnerIds) {
+          const pGen = genMap.get(pId) || 0;
+          if (pGen > maxParentGen) maxParentGen = pGen;
         }
-      }
 
-      // Children are placed in maxParentGen + 1
-      for (const childLink of (f.children || [])) {
-        const childGen = genMap.get(childLink.personId) || 0;
-        if (childGen <= maxParentGen) {
-          genMap.set(childLink.personId, maxParentGen + 1);
-          changed = true;
+        for (const pId of partnerIds) {
+          if (genMap.get(pId) < maxParentGen) {
+            genMap.set(pId, maxParentGen);
+            changed = true;
+          }
+        }
+
+        // B. Downward constraint: children are placed strictly below both parents
+        for (const childLink of children) {
+          const childGen = genMap.get(childLink.personId) || 0;
+          if (childGen <= maxParentGen) {
+            genMap.set(childLink.personId, maxParentGen + 1);
+            changed = true;
+          }
+        }
+
+        // C. Upward constraint: parents must be at least max(children) - 1
+        // This ensures in-laws and ancestors are pulled down to their proper chronological generation
+        if (children.length > 0) {
+          let maxChildGen = 0;
+          for (const childLink of children) {
+            const childGen = genMap.get(childLink.personId) || 0;
+            if (childGen > maxChildGen) maxChildGen = childGen;
+          }
+          const minParentGen = maxChildGen - 1;
+          for (const pId of partnerIds) {
+            if (genMap.get(pId) < minParentGen) {
+              genMap.set(pId, minParentGen);
+              changed = true;
+            }
+          }
         }
       }
     }
 
     if (!changed) break;
+  }
+
+  // Normalize so the earliest generation is 0
+  let minGen = Infinity;
+  for (const p of people) {
+    const g = genMap.get(p.id) || 0;
+    if (g < minGen) minGen = g;
+  }
+  if (minGen !== Infinity && minGen > 0) {
+    for (const p of people) {
+      genMap.set(p.id, (genMap.get(p.id) || 0) - minGen);
+    }
   }
 
   // Group individuals by generation
@@ -73,52 +124,227 @@ export function layoutAll(graphStore) {
 
   const sortedGens = Array.from(tiers.keys()).sort((a, b) => a - b);
 
-  // Map to store calculated node positions
-  const nodeMap = new Map();
-  const familyAnchorMap = new Map();
-  const nodes = [];
-  const familyNodes = [];
-  const edges = [];
-
-  // 2. Position nodes across tiers
-  // To avoid spaghetti, we cluster family partners together on each tier
+  // 2. Form cohesive layout units per tier (couples, multi-spouse chains, and individuals)
+  const tierUnits = new Map();
   for (const gen of sortedGens) {
     const tierPeople = tiers.get(gen);
-    const y = gen * TIER_HEIGHT;
+    const tierPersonSet = new Set(tierPeople.map(p => p.id));
+    const processed = new Set();
+    const units = [];
 
-    // Sort people in this tier: cluster families together
-    const processedPeople = new Set();
-    const orderedUnits = [];
-
+    // Build local spouse adjacency graph on this tier
+    const localSpouseGraph = new Map();
     for (const p of tierPeople) {
-      if (processedPeople.has(p.id)) continue;
-
-      // Check if person has spouses in this tier
-      const spouses = graphStore.getSpouses(p.id)
-        .filter(s => tierPeople.some(tp => tp.id === s.person.id) && !processedPeople.has(s.person.id));
-
-      if (spouses.length > 0) {
-        const unit = [p];
-        processedPeople.add(p.id);
-        for (const s of spouses) {
-          unit.push(s.person);
-          processedPeople.add(s.person.id);
+      localSpouseGraph.set(p.id, new Set());
+    }
+    for (const f of families) {
+      const pIds = (f.partnerIds || []).filter(id => tierPersonSet.has(id));
+      for (let i = 0; i < pIds.length; i++) {
+        for (let j = i + 1; j < pIds.length; j++) {
+          localSpouseGraph.get(pIds[i])?.add(pIds[j]);
+          localSpouseGraph.get(pIds[j])?.add(pIds[i]);
         }
-        orderedUnits.push(unit);
-      } else {
-        processedPeople.add(p.id);
-        orderedUnits.push([p]);
       }
     }
 
-    // Place units horizontally across the tier
-    let currentX = 0;
-    for (let uIdx = 0; uIdx < orderedUnits.length; uIdx++) {
-      const unit = orderedUnits[uIdx];
+    for (const p of tierPeople) {
+      if (processed.has(p.id)) continue;
 
-      for (let pIdx = 0; pIdx < unit.length; pIdx++) {
-        const person = unit[pIdx];
-        const x = currentX;
+      // Extract connected component of spouses
+      const component = [];
+      const queue = [p.id];
+      processed.add(p.id);
+
+      while (queue.length > 0) {
+        const curr = queue.shift();
+        component.push(curr);
+        for (const neighbor of (localSpouseGraph.get(curr) || [])) {
+          if (!processed.has(neighbor)) {
+            processed.add(neighbor);
+            queue.push(neighbor);
+          }
+        }
+      }
+
+      // Order component so married partners sit side-by-side
+      let orderedPeopleIds = [];
+      if (component.length <= 2) {
+        orderedPeopleIds = component;
+      } else {
+        // Find leaf / terminal spouse (degree 1) to start chain
+        const endNode = component.find(id => (localSpouseGraph.get(id)?.size || 0) === 1) || component[0];
+        const visitedInComp = new Set([endNode]);
+        orderedPeopleIds = [endNode];
+        let curr = endNode;
+        while (curr) {
+          const next = Array.from(localSpouseGraph.get(curr) || []).find(id => !visitedInComp.has(id));
+          if (next) {
+            visitedInComp.add(next);
+            orderedPeopleIds.push(next);
+            curr = next;
+          } else {
+            break;
+          }
+        }
+        for (const id of component) {
+          if (!visitedInComp.has(id)) orderedPeopleIds.push(id);
+        }
+      }
+
+      const unitPeople = orderedPeopleIds.map(id => graphStore.getPerson(id)).filter(Boolean);
+      const unitWidth = unitPeople.length * CARD_WIDTH + Math.max(0, unitPeople.length - 1) * NODE_SPACING_X;
+
+      units.push({
+        people: unitPeople,
+        width: unitWidth,
+        x: 0,
+        barycenter: 0
+      });
+    }
+
+    tierUnits.set(gen, units);
+  }
+
+  // 3. Collision avoidance & compaction: Assign non-overlapping horizontal coordinates
+  function assignTierCoordinates(units, spacing) {
+    if (!units || units.length === 0) return;
+
+    // Left-to-right pass: place at ideal barycenter without overlapping previous unit
+    for (let i = 0; i < units.length; i++) {
+      const u = units[i];
+      const idealLeft = u.barycenter - u.width / 2;
+      if (i === 0) {
+        u.x = idealLeft;
+      } else {
+        const prev = units[i - 1];
+        const minLeft = prev.x + prev.width + spacing;
+        u.x = Math.max(minLeft, idealLeft);
+      }
+    }
+
+    // Right-to-left compaction pass: pull units back towards ideal barycenter when space permits
+    for (let i = units.length - 2; i >= 0; i--) {
+      const u = units[i];
+      const nxt = units[i + 1];
+      const idealLeft = u.barycenter - u.width / 2;
+      const maxLeft = nxt.x - spacing - u.width;
+      const target = Math.min(maxLeft, idealLeft);
+      if (target > u.x) {
+        u.x = target;
+      }
+    }
+  }
+
+  // Initial placement across tiers
+  for (const gen of sortedGens) {
+    assignTierCoordinates(tierUnits.get(gen), CLUSTER_SPACING_X);
+  }
+
+  // 4. Two-way Sugiyama Barycenter Sweeps for crossing minimization
+  const SWEEP_COUNT = 16;
+  for (let sweep = 0; sweep < SWEEP_COUNT; sweep++) {
+    // A. Downward sweep (Tier 0 to max)
+    for (const gen of sortedGens) {
+      const units = tierUnits.get(gen) || [];
+      const parentUnits = tierUnits.get(gen - 1) || [];
+
+      for (const u of units) {
+        const parentXs = [];
+        for (const person of u.people) {
+          const pfamId = childToParentFamilyId.get(person.id);
+          if (pfamId) {
+            const pfam = familyById.get(pfamId);
+            if (pfam) {
+              const partnerXs = [];
+              for (const partnerId of (pfam.partnerIds || [])) {
+                for (const pu of parentUnits) {
+                  const pIdx = pu.people.findIndex(p => p.id === partnerId);
+                  if (pIdx !== -1) {
+                    partnerXs.push(pu.x + pIdx * (CARD_WIDTH + NODE_SPACING_X) + CARD_WIDTH / 2);
+                  }
+                }
+              }
+              if (partnerXs.length > 0) {
+                parentXs.push(partnerXs.reduce((a, b) => a + b, 0) / partnerXs.length);
+              }
+            }
+          }
+        }
+
+        if (parentXs.length > 0) {
+          u.barycenter = parentXs.reduce((a, b) => a + b, 0) / parentXs.length;
+        } else if (u.barycenter === 0) {
+          u.barycenter = u.x + u.width / 2;
+        }
+      }
+
+      units.sort((a, b) => a.barycenter - b.barycenter);
+      assignTierCoordinates(units, CLUSTER_SPACING_X);
+    }
+
+    // B. Upward sweep (Tier max to 0)
+    for (let gIdx = sortedGens.length - 1; gIdx >= 0; gIdx--) {
+      const gen = sortedGens[gIdx];
+      const units = tierUnits.get(gen) || [];
+      const childUnits = tierUnits.get(gen + 1) || [];
+
+      for (const u of units) {
+        const childXs = [];
+        for (const person of u.people) {
+          const fams = familiesByPartnerId.get(person.id) || [];
+          for (const f of fams) {
+            for (const childLink of (f.children || [])) {
+              for (const cu of childUnits) {
+                const cIdx = cu.people.findIndex(p => p.id === childLink.personId);
+                if (cIdx !== -1) {
+                  childXs.push(cu.x + cIdx * (CARD_WIDTH + NODE_SPACING_X) + CARD_WIDTH / 2);
+                }
+              }
+            }
+          }
+        }
+
+        if (childXs.length > 0) {
+          u.barycenter = childXs.reduce((a, b) => a + b, 0) / childXs.length;
+        } else if (u.barycenter === 0) {
+          u.barycenter = u.x + u.width / 2;
+        }
+      }
+
+      units.sort((a, b) => a.barycenter - b.barycenter);
+      assignTierCoordinates(units, CLUSTER_SPACING_X);
+    }
+  }
+
+  // Normalize all X coordinates so layout starts with a clean left margin
+  let globalMinX = Infinity;
+  for (const units of tierUnits.values()) {
+    for (const u of units) {
+      if (u.x < globalMinX) globalMinX = u.x;
+    }
+  }
+  const xOffset = globalMinX !== Infinity ? -globalMinX + 40 : 40;
+  for (const units of tierUnits.values()) {
+    for (const u of units) {
+      u.x += xOffset;
+    }
+  }
+
+  // 5. Construct layout nodes map
+  const nodeMap = new Map();
+  const nodes = [];
+  const familyAnchorMap = new Map();
+  const familyNodes = [];
+  const edges = [];
+
+  for (const gen of sortedGens) {
+    const units = tierUnits.get(gen) || [];
+    const y = gen * TIER_HEIGHT + 40;
+
+    for (const u of units) {
+      for (let pIdx = 0; pIdx < u.people.length; pIdx++) {
+        const person = u.people[pIdx];
+        const x = u.x + pIdx * (CARD_WIDTH + NODE_SPACING_X);
         const nodeObj = {
           id: person.id,
           person,
@@ -129,15 +355,11 @@ export function layoutAll(graphStore) {
         };
         nodeMap.set(person.id, nodeObj);
         nodes.push(nodeObj);
-
-        currentX += CARD_WIDTH + NODE_SPACING_X;
       }
-
-      currentX += CLUSTER_SPACING_X;
     }
   }
 
-  // 3. Compute family anchors and edges
+  // 6. Compute family anchors and connection edges
   for (const f of families) {
     const partnerNodes = (f.partnerIds || [])
       .map(id => nodeMap.get(id))
@@ -147,7 +369,6 @@ export function layoutAll(graphStore) {
     let anchorY = 0;
 
     if (partnerNodes.length === 2) {
-      // Anchor between partners
       const leftNode = partnerNodes[0].x < partnerNodes[1].x ? partnerNodes[0] : partnerNodes[1];
       const rightNode = partnerNodes[0].x < partnerNodes[1].x ? partnerNodes[1] : partnerNodes[0];
 
@@ -167,7 +388,6 @@ export function layoutAll(graphStore) {
       anchorX = partnerNodes[0].x + CARD_WIDTH / 2;
       anchorY = partnerNodes[0].y + CARD_HEIGHT;
     } else {
-      // No positioned partners
       continue;
     }
 
@@ -180,7 +400,7 @@ export function layoutAll(graphStore) {
     familyAnchorMap.set(f.id, famAnchor);
     familyNodes.push(famAnchor);
 
-    // Edges to children
+    // Edges to children (smooth S-curve strictly through tier gap)
     for (const childLink of (f.children || [])) {
       const childNode = nodeMap.get(childLink.personId);
       if (childNode) {
@@ -200,7 +420,7 @@ export function layoutAll(graphStore) {
     }
   }
 
-  // Calculate bounding box
+  // 7. Calculate overall layout bounds
   let minX = Infinity;
   let minY = Infinity;
   let maxX = -Infinity;
@@ -220,6 +440,28 @@ export function layoutAll(graphStore) {
     maxY = 600;
   }
 
+  // 8. Generate horizontal generation panels
+  const panels = [];
+  if (sortedGens.length > 0 && nodes.length > 0) {
+    const minGen = sortedGens[0];
+    const maxGen = sortedGens[sortedGens.length - 1];
+    const panelX = minX - 10000;
+    const panelWidth = (maxX - minX) + 20000;
+
+    for (let gen = minGen; gen <= maxGen; gen++) {
+      const panelY = gen * TIER_HEIGHT + 40 - TIER_GAP / 2;
+      panels.push({
+        id: `gen_panel_${gen}`,
+        generation: gen,
+        isEven: Math.abs(gen) % 2 === 0,
+        x: panelX,
+        y: panelY,
+        width: panelWidth,
+        height: TIER_HEIGHT
+      });
+    }
+  }
+
   return {
     nodes,
     families: familyNodes,
@@ -227,17 +469,19 @@ export function layoutAll(graphStore) {
     bounds: {
       minX,
       minY,
-      maxX,
-      maxY,
-      width: maxX - minX,
-      height: maxY - minY
-    }
+      maxX: maxX + 40,
+      maxY: maxY + 40,
+      width: (maxX - minX) + 80,
+      height: (maxY - minY) + 80
+    },
+    panels
   };
 }
 
 /**
  * Calculates an Hourglass lineage layout centered on a specific focus person.
  * Ancestors expand upwards, descendants expand downwards, spouses sit beside the focus person.
+ * Resolves horizontal overlaps so no cards collide.
  * @param {GraphStore} graphStore
  * @param {string} focusPersonId
  * @returns {Object} Layout result { nodes, families, edges, bounds }
@@ -253,7 +497,6 @@ export function layoutHourglass(graphStore, focusPersonId) {
   const edges = [];
   const nodeMap = new Map();
 
-  // Helper to add node
   function addNode(person, x, y) {
     if (nodeMap.has(person.id)) return nodeMap.get(person.id);
     const nodeObj = {
@@ -280,7 +523,7 @@ export function layoutHourglass(graphStore, focusPersonId) {
 
   // 2. Ancestors (Generations -1, -2, -3, ...)
   function buildAncestors(childPerson, childNode, currentGen) {
-    if (Math.abs(currentGen) > 4) return; // Limit depth for readability
+    if (Math.abs(currentGen) > 4) return;
 
     const parents = graphStore.getParents(childPerson.id);
     if (parents.length === 0) return;
@@ -288,7 +531,6 @@ export function layoutHourglass(graphStore, focusPersonId) {
     const parentY = currentGen * TIER_HEIGHT;
     const parentNodes = [];
 
-    // Place parents centered above the child
     const parentClusterWidth = parents.length * CARD_WIDTH + (parents.length - 1) * NODE_SPACING_X;
     let pStartX = (childNode.x + CARD_WIDTH / 2) - parentClusterWidth / 2;
 
@@ -297,39 +539,6 @@ export function layoutHourglass(graphStore, focusPersonId) {
       const pNode = addNode(p, pStartX + i * (CARD_WIDTH + NODE_SPACING_X), parentY);
       parentNodes.push(pNode);
       buildAncestors(p, pNode, currentGen - 1);
-    }
-
-    // Connect parents to child
-    if (parentNodes.length === 2) {
-      const pLeft = parentNodes[0].x < parentNodes[1].x ? parentNodes[0] : parentNodes[1];
-      const pRight = parentNodes[0].x < parentNodes[1].x ? parentNodes[1] : parentNodes[0];
-      const anchorX = (pLeft.x + CARD_WIDTH + pRight.x) / 2;
-      const anchorY = pLeft.y + CARD_HEIGHT / 2;
-
-      edges.push({
-        id: `edge_m_anc_${pLeft.id}_${pRight.id}`,
-        type: 'marriage',
-        fromId: pLeft.id,
-        toId: pRight.id,
-        d: createHorizontalConnector(pLeft.x + CARD_WIDTH, anchorY, pRight.x)
-      });
-
-      edges.push({
-        id: `edge_c_anc_${pLeft.id}_${childNode.id}`,
-        type: 'child',
-        fromId: `${pLeft.id}_${pRight.id}`,
-        toId: childNode.id,
-        d: createCurvedConnector(anchorX, anchorY, childNode.x + CARD_WIDTH / 2, childNode.y)
-      });
-    } else if (parentNodes.length === 1) {
-      const p = parentNodes[0];
-      edges.push({
-        id: `edge_c_anc_${p.id}_${childNode.id}`,
-        type: 'child',
-        fromId: p.id,
-        toId: childNode.id,
-        d: createCurvedConnector(p.x + CARD_WIDTH / 2, p.y + CARD_HEIGHT, childNode.x + CARD_WIDTH / 2, childNode.y)
-      });
     }
   }
 
@@ -349,23 +558,91 @@ export function layoutHourglass(graphStore, focusPersonId) {
       const childPerson = childLink.person;
       const childNode = addNode(childPerson, cStartX + i * (CARD_WIDTH + NODE_SPACING_X), childY);
 
-      // Edge from parent to child
-      edges.push({
-        id: `edge_c_desc_${parentPerson.id}_${childPerson.id}`,
-        type: 'child',
-        fromId: parentPerson.id,
-        toId: childPerson.id,
-        d: createCurvedConnector(parentNode.x + CARD_WIDTH / 2, parentNode.y + CARD_HEIGHT, childNode.x + CARD_WIDTH / 2, childNode.y)
-      });
-
       buildDescendants(childPerson, childNode, currentGen + 1);
     }
   }
 
-  // Build upwards and downwards from focus person
   const focusNode = nodeMap.get(rootPerson.id);
   buildAncestors(rootPerson, focusNode, -1);
   buildDescendants(rootPerson, focusNode, 1);
+
+  // 4. Overlap Prevention across tiers in Hourglass view
+  const tierMap = new Map();
+  for (const n of nodes) {
+    const gen = Math.round(n.y / TIER_HEIGHT);
+    if (!tierMap.has(gen)) tierMap.set(gen, []);
+    tierMap.get(gen).push(n);
+  }
+
+  for (const [gen, tierNodes] of tierMap.entries()) {
+    tierNodes.sort((a, b) => a.x - b.x);
+    for (let i = 1; i < tierNodes.length; i++) {
+      const prev = tierNodes[i - 1];
+      const curr = tierNodes[i];
+      const minX = prev.x + prev.width + NODE_SPACING_X;
+      if (curr.x < minX) {
+        curr.x = minX;
+      }
+    }
+  }
+
+  // 5. Build edges with updated coordinates
+  for (const n of nodes) {
+    // Parents
+    const parents = graphStore.getParents(n.id)
+      .map(p => nodeMap.get(p.id))
+      .filter(Boolean);
+
+    if (parents.length === 2) {
+      const pLeft = parents[0].x < parents[1].x ? parents[0] : parents[1];
+      const pRight = parents[0].x < parents[1].x ? parents[1] : parents[0];
+      const anchorX = (pLeft.x + CARD_WIDTH + pRight.x) / 2;
+      const anchorY = pLeft.y + CARD_HEIGHT / 2;
+
+      edges.push({
+        id: `edge_m_anc_${pLeft.id}_${pRight.id}`,
+        type: 'marriage',
+        fromId: pLeft.id,
+        toId: pRight.id,
+        d: createHorizontalConnector(pLeft.x + CARD_WIDTH, anchorY, pRight.x)
+      });
+
+      edges.push({
+        id: `edge_c_anc_${pLeft.id}_${n.id}`,
+        type: 'child',
+        fromId: `${pLeft.id}_${pRight.id}`,
+        toId: n.id,
+        d: createCurvedConnector(anchorX, anchorY, n.x + CARD_WIDTH / 2, n.y)
+      });
+    } else if (parents.length === 1) {
+      const p = parents[0];
+      edges.push({
+        id: `edge_c_anc_${p.id}_${n.id}`,
+        type: 'child',
+        fromId: p.id,
+        toId: n.id,
+        d: createCurvedConnector(p.x + CARD_WIDTH / 2, p.y + CARD_HEIGHT, n.x + CARD_WIDTH / 2, n.y)
+      });
+    }
+
+    // Spouses on center tier
+    if (n.y === 0) {
+      const sps = graphStore.getSpouses(n.id)
+        .map(s => nodeMap.get(s.person.id))
+        .filter(Boolean);
+      for (const sp of sps) {
+        if (sp.x > n.x) {
+          edges.push({
+            id: `edge_m_center_${n.id}_${sp.id}`,
+            type: 'marriage',
+            fromId: n.id,
+            toId: sp.id,
+            d: createHorizontalConnector(n.x + CARD_WIDTH, n.y + CARD_HEIGHT / 2, sp.x)
+          });
+        }
+      }
+    }
+  }
 
   // Calculate bounds
   let minX = Infinity;
@@ -387,17 +664,46 @@ export function layoutHourglass(graphStore, focusPersonId) {
     maxY = 300;
   }
 
+  // Generate horizontal generation panels
+  const panels = [];
+  if (nodes.length > 0) {
+    let minGen = 0;
+    let maxGen = 0;
+    for (const n of nodes) {
+      const g = Math.round(n.y / TIER_HEIGHT);
+      if (g < minGen) minGen = g;
+      if (g > maxGen) maxGen = g;
+    }
+
+    const panelX = minX - 10000;
+    const panelWidth = (maxX - minX) + 20000;
+
+    for (let gen = minGen; gen <= maxGen; gen++) {
+      const panelY = gen * TIER_HEIGHT - TIER_GAP / 2;
+      panels.push({
+        id: `gen_panel_hg_${gen}`,
+        generation: gen,
+        isEven: Math.abs(gen) % 2 === 0,
+        x: panelX,
+        y: panelY,
+        width: panelWidth,
+        height: TIER_HEIGHT
+      });
+    }
+  }
+
   return {
     nodes,
     families: familyNodes,
     edges,
     bounds: {
-      minX,
-      minY,
-      maxX,
-      maxY,
-      width: maxX - minX,
-      height: maxY - minY
-    }
+      minX: minX - 40,
+      minY: minY - 40,
+      maxX: maxX + 40,
+      maxY: maxY + 40,
+      width: (maxX - minX) + 80,
+      height: (maxY - minY) + 80
+    },
+    panels
   };
 }

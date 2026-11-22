@@ -507,7 +507,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "female",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p5_birth",
@@ -564,6 +564,37 @@ window.GENEA_DATA = {
           "date": {
             "qualifier": "exact",
             "year": 1952
+          },
+          "sourceIds": []
+        },
+        {
+          "id": "e_death_4",
+          "type": "death",
+          "date": {
+            "qualifier": "exact",
+            "year": 2023,
+            "month": 4,
+            "day": 8
+          },
+          "place": {
+            "name": "Aarhus friplejehjem, Tranbjerg",
+            "country": "Danmark"
+          },
+          "sourceIds": []
+        },
+        {
+          "id": "e_burial_6",
+          "type": "burial",
+          "label": "Burial",
+          "date": {
+            "qualifier": "exact",
+            "year": 2023,
+            "month": 4,
+            "day": 20
+          },
+          "place": {
+            "name": "Tranbjerg Kirke",
+            "country": "Danmark"
           },
           "sourceIds": []
         }
@@ -837,7 +868,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "male",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p7_birth",
@@ -897,6 +928,21 @@ window.GENEA_DATA = {
           },
           "place": {
             "name": "Vor Frue kirke, Ålborg",
+            "country": "Danmark"
+          },
+          "sourceIds": []
+        },
+        {
+          "id": "e_death_4",
+          "type": "death",
+          "date": {
+            "qualifier": "exact",
+            "year": 2026,
+            "month": 11,
+            "day": 4
+          },
+          "place": {
+            "name": "Plejehjemmet Borgvold, Viby",
             "country": "Danmark"
           },
           "sourceIds": []
@@ -2332,7 +2378,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "female",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p23_birth",
@@ -3264,7 +3310,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "female",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p26_birth",
@@ -3516,7 +3562,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "male",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p72_birth",
@@ -4097,7 +4143,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "male",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p15_birth",
@@ -4846,7 +4892,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "female",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p34_birth",
@@ -6079,7 +6125,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "male",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p6_birth",
@@ -7151,7 +7197,7 @@ window.GENEA_DATA = {
         }
       ],
       "gender": "male",
-      "living": true,
+      "living": false,
       "events": [
         {
           "id": "e_p73_birth",

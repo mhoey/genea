@@ -7,8 +7,8 @@
       "display": "Lise Mortensen"
     }
   ],
-  "sex": "female",
-  "living": true,
+  "gender": "female",
+  "living": false,
   "events": [
     {
       "id": "e_p34_birth",

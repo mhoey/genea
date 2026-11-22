@@ -46,26 +46,56 @@ type Place struct {
 type LifeEventType string
 
 const (
-	LifeEventBirth     LifeEventType = "birth"
-	LifeEventMarriage  LifeEventType = "marriage"
-	LifeEventDeath     LifeEventType = "death"
-	LifeEventResidence LifeEventType = "residence"
+	LifeEventBirth        LifeEventType = "birth"
+	LifeEventBaptism      LifeEventType = "baptism"
+	LifeEventConfirmation LifeEventType = "confirmation"
+	LifeEventMarriage     LifeEventType = "marriage"
+	LifeEventDeath        LifeEventType = "death"
+	LifeEventBurial       LifeEventType = "burial"
+	LifeEventResidence    LifeEventType = "residence"
+	LifeEventCensus       LifeEventType = "census"
+	LifeEventOccupation   LifeEventType = "occupation"
 )
 
 // Alias for LifeEventType and alternative constant names.
 type EventType = LifeEventType
 
 const (
-	EventTypeBirth     = LifeEventBirth
-	EventTypeMarriage  = LifeEventMarriage
-	EventTypeDeath     = LifeEventDeath
-	EventTypeResidence = LifeEventResidence
+	EventTypeBirth        = LifeEventBirth
+	EventTypeBaptism      = LifeEventBaptism
+	EventTypeConfirmation = LifeEventConfirmation
+	EventTypeMarriage     = LifeEventMarriage
+	EventTypeDeath        = LifeEventDeath
+	EventTypeBurial       = LifeEventBurial
+	EventTypeResidence    = LifeEventResidence
+	EventTypeCensus       = LifeEventCensus
+	EventTypeOccupation   = LifeEventOccupation
 
-	EventBirth     = LifeEventBirth
-	EventMarriage  = LifeEventMarriage
-	EventDeath     = LifeEventDeath
-	EventResidence = LifeEventResidence
+	EventBirth        = LifeEventBirth
+	EventBaptism      = LifeEventBaptism
+	EventConfirmation = LifeEventConfirmation
+	EventMarriage     = LifeEventMarriage
+	EventDeath        = LifeEventDeath
+	EventBurial       = LifeEventBurial
+	EventResidence    = LifeEventResidence
+	EventCensus       = LifeEventCensus
+	EventOccupation   = LifeEventOccupation
 )
+
+// IsSingleInstanceEvent returns true if the event type can only occur once per person
+// (birth, baptism, confirmation, death, burial).
+func IsSingleInstanceEvent(t LifeEventType) bool {
+	switch t {
+	case LifeEventBirth,
+		LifeEventBaptism,
+		LifeEventConfirmation,
+		LifeEventDeath,
+		LifeEventBurial:
+		return true
+	default:
+		return false
+	}
+}
 
 type RelationType string
 
@@ -92,19 +122,19 @@ type Name struct {
 	Display              string `json:"display,omitempty"`
 }
 
-type Sex string
+type Gender string
 
 const (
-	SexFemale   Sex = "female"
-	SexMale     Sex = "male"
-	SexIntersex Sex = "intersex"
-	SexUnknown  Sex = "unknown"
+	GenderFemale   Gender = "female"
+	GenderMale     Gender = "male"
+	GenderIntersex Gender = "intersex"
+	GenderUnknown  Gender = "unknown"
 )
 
 type Person struct {
 	ID                string      `json:"id"`
 	Names             []Name      `json:"names"`
-	Sex               Sex         `json:"sex"` // female, male, intersex, unknown
+	Gender            Gender      `json:"gender"` // female, male, intersex, unknown
 	Living            bool        `json:"living"`
 	Events            []LifeEvent `json:"events"`
 	FamilyIDsAsSpouse []string    `json:"familyIdsAsSpouse"`

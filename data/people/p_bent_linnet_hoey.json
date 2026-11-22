@@ -7,8 +7,8 @@
       "display": "Bent Linnet Høy"
     }
   ],
-  "sex": "male",
-  "living": true,
+  "gender": "male",
+  "living": false,
   "events": [
     {
       "id": "e_p7_birth",
@@ -21,7 +21,7 @@
         "day": 27
       },
       "place": {
-        "name": "Vejle Amts & bys sygeh. Vor Frelser sogn",
+        "name": "Vejle Amts \u0026 bys sygeh. Vor Frelser sogn",
         "country": "Danmark"
       },
       "sourceIds": []
@@ -68,6 +68,21 @@
       },
       "place": {
         "name": "Vor Frue kirke, Ålborg",
+        "country": "Danmark"
+      },
+      "sourceIds": []
+    },
+    {
+      "id": "e_death_4",
+      "type": "death",
+      "date": {
+        "qualifier": "exact",
+        "year": 2026,
+        "month": 11,
+        "day": 4
+      },
+      "place": {
+        "name": "Plejehjemmet Borgvold, Viby",
         "country": "Danmark"
       },
       "sourceIds": []

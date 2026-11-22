@@ -8,7 +8,7 @@
       "display": "Thomas Doe Jr."
     }
   ],
-  "sex": "male",
+  "gender": "male",
   "living": true,
   "events": [
     {

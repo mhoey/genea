@@ -7,7 +7,7 @@
       "display": "John Doe"
     }
   ],
-  "sex": "male",
+  "gender": "male",
   "living": false,
   "events": [
     {

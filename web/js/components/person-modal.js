@@ -3,6 +3,47 @@
 import { clearChildren, createHTML } from '../utils/dom.js';
 import { formatGeneaDate } from '../utils/date-format.js';
 
+const EVENT_LABELS = {
+  birth: 'Fødsel',
+  baptism: 'Dåb',
+  confirmation: 'Konfirmation',
+  marriage: 'Vielse',
+  death: 'Død',
+  burial: 'Begravelse',
+  residence: 'Bopæl',
+  census: 'Folketælling',
+  occupation: 'Erhverv',
+  Birth: 'Fødsel',
+  Baptism: 'Dåb',
+  Confirmation: 'Konfirmation',
+  Marriage: 'Vielse',
+  Death: 'Død',
+  Burial: 'Begravelse',
+  Residence: 'Bopæl',
+  Census: 'Folketælling',
+  Occupation: 'Erhverv',
+  Event: 'Begivenhed'
+};
+
+const GENDER_LABELS = {
+  male: 'Mand',
+  female: 'Kvinde',
+  intersex: 'Interkøn',
+  unknown: 'Ukendt'
+};
+
+const STATUS_LABELS = {
+  living: 'Levende',
+  deceased: 'Afdød'
+};
+
+const RELATIONSHIP_LABELS = {
+  biological: 'biologisk',
+  adopted: 'adopteret',
+  foster: 'plejebarn',
+  step: 'stedbarn'
+};
+
 export class PersonModal {
   /**
    * @param {HTMLElement} dialogElement - The <dialog id="person-dialog"> element
@@ -107,17 +148,17 @@ export class PersonModal {
     const badgesContainer = this.dialog.querySelector('#modal-badges-container');
     if (badgesContainer) {
       clearChildren(badgesContainer);
-      const sex = person.sex || 'unknown';
-      const sexBadge = createHTML('span', {
-        className: `badge sex-${sex}`,
-        textContent: sex.charAt(0).toUpperCase() + sex.slice(1)
+      const gender = person.gender || person.sex || 'unknown';
+      const genderBadge = createHTML('span', {
+        className: `badge gender-${gender} sex-${gender}`,
+        textContent: GENDER_LABELS[gender] || (gender.charAt(0).toUpperCase() + gender.slice(1))
       });
-      badgesContainer.appendChild(sexBadge);
+      badgesContainer.appendChild(genderBadge);
 
       const status = person.living ? 'living' : 'deceased';
       const statusBadge = createHTML('span', {
         className: `badge status-${status}`,
-        textContent: status.charAt(0).toUpperCase() + status.slice(1)
+        textContent: STATUS_LABELS[status] || (status.charAt(0).toUpperCase() + status.slice(1))
       });
       badgesContainer.appendChild(statusBadge);
     }
@@ -126,16 +167,14 @@ export class PersonModal {
     const demoTable = this.dialog.querySelector('#modal-demographics-table');
     if (demoTable) {
       clearChildren(demoTable);
-      const rows = [
-        ['ID', person.id]
-      ];
+      const rows = [];
 
       const primaryName = (person.names || [])[0] || {};
-      if (primaryName.given) rows.push(['Given Name', primaryName.given]);
-      if (primaryName.surname) rows.push(['Surname', primaryName.surname]);
-      if (primaryName.maidenOrBirthSurname) rows.push(['Birth Surname', primaryName.maidenOrBirthSurname]);
-      if (primaryName.suffix) rows.push(['Suffix', primaryName.suffix]);
-      if (displayName) rows.push(['Display Name', displayName]);
+      if (primaryName.given) rows.push(['Fornavn', primaryName.given]);
+      if (primaryName.surname) rows.push(['Efternavn', primaryName.surname]);
+      if (primaryName.maidenOrBirthSurname) rows.push(['Pigenavn / fødenavn', primaryName.maidenOrBirthSurname]);
+      if (primaryName.suffix) rows.push(['Suffiks', primaryName.suffix]);
+      if (displayName) rows.push(['Vist navn', displayName]);
 
       for (const [label, val] of rows) {
         const tr = createHTML('tr', {}, [
@@ -155,12 +194,14 @@ export class PersonModal {
       if (events.length === 0) {
         timelineEl.appendChild(createHTML('li', {
           className: 'event-item empty-state',
-          textContent: 'No recorded life events.'
+          textContent: 'Ingen registrerede livsbegivenheder.'
         }));
       } else {
         for (const ev of events) {
-          const typeStr = ev.label || (ev.type ? ev.type.charAt(0).toUpperCase() + ev.type.slice(1) : 'Event');
-          const dateStr = formatGeneaDate(ev.date, { showExactQualifier: true }) || 'Date unknown';
+          const rawType = ev.type || '';
+          const rawLabel = ev.label || '';
+          const typeStr = EVENT_LABELS[rawLabel] || EVENT_LABELS[rawType] || rawLabel || (rawType ? rawType.charAt(0).toUpperCase() + rawType.slice(1) : 'Begivenhed');
+          const dateStr = formatGeneaDate(ev.date, { showExactQualifier: true }) || 'Ukendt dato';
           const placeStr = ev.place ? (ev.place.country ? `${ev.place.name}, ${ev.place.country}` : ev.place.name) : '';
 
           const itemChildren = [
@@ -183,7 +224,7 @@ export class PersonModal {
               const title = src ? src.title : sId;
               srcList.appendChild(createHTML('span', {
                 className: 'badge badge-source',
-                textContent: `Source: ${title}`
+                textContent: `Kilde: ${title}`
               }));
             }
             itemChildren.push(srcList);
@@ -209,7 +250,7 @@ export class PersonModal {
     // 5. Notes & Sources
     const notesEl = this.dialog.querySelector('#modal-notes');
     if (notesEl) {
-      notesEl.textContent = person.notes || 'No general biographical notes.';
+      notesEl.textContent = person.notes || 'Ingen generelle biografiske noter.';
     }
 
     const sourcesListEl = this.dialog.querySelector('#modal-sources-list');
@@ -226,7 +267,7 @@ export class PersonModal {
       if (sourceIds.size === 0) {
         sourcesListEl.appendChild(createHTML('li', {
           className: 'empty-state',
-          textContent: 'No sources cited directly for this record.'
+          textContent: 'Ingen kilder angivet direkte for denne person.'
         }));
       } else {
         for (const sId of sourceIds) {
@@ -235,13 +276,13 @@ export class PersonModal {
             const li = createHTML('li', { className: 'source-item' }, [
               createHTML('strong', { textContent: src.title }),
               src.citation ? createHTML('div', { className: 'source-citation', textContent: src.citation }) : null,
-              src.repository ? createHTML('div', { className: 'source-repo', textContent: `Repository: ${src.repository}` }) : null,
+              src.repository ? createHTML('div', { className: 'source-repo', textContent: `Arkiv: ${src.repository}` }) : null,
               src.url ? createHTML('a', {
                 href: src.url,
                 target: '_blank',
                 rel: 'noopener noreferrer',
                 className: 'source-link',
-                textContent: 'External Resource ↗'
+                textContent: 'Ekstern kilde ↗'
               }) : null
             ].filter(Boolean));
             sourcesListEl.appendChild(li);
@@ -259,7 +300,7 @@ export class PersonModal {
     clearChildren(listEl);
 
     if (relatives.length === 0) {
-      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'None recorded' }));
+      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'Ingen registreret' }));
       return;
     }
 
@@ -284,7 +325,7 @@ export class PersonModal {
     clearChildren(listEl);
 
     if (spouses.length === 0) {
-      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'None recorded' }));
+      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'Ingen registreret' }));
       return;
     }
 
@@ -293,7 +334,7 @@ export class PersonModal {
       const name = this.graphStore.getDisplayName(sp);
       let marriageDetails = '';
       if (item.marriageEvent && item.marriageEvent.date) {
-        marriageDetails = ` (m. ${formatGeneaDate(item.marriageEvent.date)})`;
+        marriageDetails = ` (g. ${formatGeneaDate(item.marriageEvent.date)})`;
       }
 
       const btn = createHTML('button', {
@@ -315,14 +356,16 @@ export class PersonModal {
     clearChildren(listEl);
 
     if (children.length === 0) {
-      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'None recorded' }));
+      listEl.appendChild(createHTML('li', { className: 'empty-text', textContent: 'Ingen registreret' }));
       return;
     }
 
     for (const item of children) {
       const ch = item.person;
       const name = this.graphStore.getDisplayName(ch);
-      const relKind = item.relationship && item.relationship !== 'biological' ? ` [${item.relationship}]` : '';
+      const relKind = item.relationship && item.relationship !== 'biological' 
+        ? ` [${RELATIONSHIP_LABELS[item.relationship] || item.relationship}]` 
+        : '';
 
       const btn = createHTML('button', {
         className: 'link-person',

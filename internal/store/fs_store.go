@@ -98,14 +98,14 @@ func (s *FSStore) UpdatePersonAttribute(id string, attr string, value any) (*Per
 	}
 
 	switch attr {
-	case "sex":
+	case "gender", "sex":
 		switch v := value.(type) {
-		case Sex:
-			p.Sex = v
+		case Gender:
+			p.Gender = v
 		case string:
-			p.Sex = Sex(v)
+			p.Gender = Gender(v)
 		default:
-			return nil, fmt.Errorf("sex must be string")
+			return nil, fmt.Errorf("gender must be string")
 		}
 	case "living":
 		v, ok := value.(bool)
@@ -131,6 +131,33 @@ func (s *FSStore) UpdatePersonAttribute(id string, attr string, value any) (*Per
 			return nil, fmt.Errorf("surname must be string")
 		}
 		p.Names[0].Surname = v
+	case "birth_date":
+		date, ok := value.(GeneaDate)
+		if !ok {
+			return nil, fmt.Errorf("birth_date must be GeneaDate")
+		}
+		p.updateBirthDate(date)
+	case "death_date":
+		date, ok := value.(GeneaDate)
+		if !ok {
+			return nil, fmt.Errorf("death_date must be GeneaDate")
+		}
+		p.updateDeathDate(date)
+		p.Living = false
+	case "events":
+		events, ok := value.([]LifeEvent)
+		if !ok {
+			return nil, fmt.Errorf("events must be []LifeEvent")
+		}
+		for i := range events {
+			if events[i].SourceIDs == nil {
+				events[i].SourceIDs = []string{}
+			}
+			if events[i].Type == LifeEventDeath || events[i].Type == LifeEventBurial {
+				p.Living = false
+			}
+		}
+		p.Events = events
 	default:
 		return nil, fmt.Errorf("unsupported attribute %q", attr)
 	}
@@ -165,6 +192,9 @@ func (s *FSStore) AddEvent(targetID string, ev LifeEvent) error {
 		p, err := s.GetPerson(targetID)
 		if err != nil {
 			return err
+		}
+		if ev.Type == LifeEventDeath || ev.Type == LifeEventBurial {
+			p.Living = false
 		}
 		p.Events = append(p.Events, ev)
 		return writeJSONAtomic(s.personPath(targetID), p)
@@ -352,8 +382,8 @@ func (s *FSStore) ListSources() ([]Source, error) {
 		if e.IsDir() || !strings.HasSuffix(e.Name(), ".json") {
 			continue
 		}
-		id := strings.TrimSuffix(e.Name(), ".json")
-		src, err := readJSON[Source](s.sourcePath(id))
+		path := strings.TrimSuffix(e.Name(), ".json")
+		src, err := readJSON[Source](s.sourcePath(path))
 		if err != nil {
 			return nil, err
 		}
@@ -363,6 +393,39 @@ func (s *FSStore) ListSources() ([]Source, error) {
 		return strings.Compare(a.ID, b.ID)
 	})
 	return out, nil
+}
+
+// Helper methods for updating dates
+func (p *Person) updateBirthDate(date GeneaDate) {
+	// Look for existing birth event
+	for i, event := range p.Events {
+		if event.Type == LifeEventBirth {
+			p.Events[i].Date = &date
+			return
+		}
+	}
+	// If no birth event exists, create one
+	p.Events = append(p.Events, LifeEvent{
+		ID:   "e_birth_" + fmt.Sprintf("%d", len(p.Events)),
+		Type: LifeEventBirth,
+		Date: &date,
+	})
+}
+
+func (p *Person) updateDeathDate(date GeneaDate) {
+	// Look for existing death event
+	for i, event := range p.Events {
+		if event.Type == LifeEventDeath {
+			p.Events[i].Date = &date
+			return
+		}
+	}
+	// If no death event exists, create one
+	p.Events = append(p.Events, LifeEvent{
+		ID:   "e_death_" + fmt.Sprintf("%d", len(p.Events)),
+		Type: LifeEventDeath,
+		Date: &date,
+	})
 }
 
 // --- Full Repository Integrity Check ---

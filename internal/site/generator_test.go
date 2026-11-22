@@ -24,7 +24,7 @@ func setupTestStore(t *testing.T) (*store.FSStore, string) {
 		Names: []store.Name{
 			{Given: "John", Surname: "Doe", Display: "John Doe"},
 		},
-		Sex:    store.SexMale,
+		Gender: store.GenderMale,
 		Living: false,
 		Events: []store.LifeEvent{
 			{
@@ -52,7 +52,7 @@ func setupTestStore(t *testing.T) (*store.FSStore, string) {
 		Names: []store.Name{
 			{Given: "Jane", Surname: "Smith", Display: "Jane Smith"},
 		},
-		Sex:    store.SexFemale,
+		Gender: store.GenderFemale,
 		Living: true,
 	}
 	if _, err := fsStore.AddPerson(p2); err != nil {

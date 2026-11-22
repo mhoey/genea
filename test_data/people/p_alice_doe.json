@@ -7,7 +7,7 @@
       "display": "Alice Doe"
     }
   ],
-  "sex": "female",
+  "gender": "female",
   "living": true,
   "events": [
     {
