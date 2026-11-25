@@ -5,13 +5,13 @@
     "context": "."
   },
   "remoteUser": "zed",
-
+  "runArgs": ["--network", "pasta:--map-gw"],
   "containerEnv": {
-    "CGO_ENABLED": "1"
+    "CGO_ENABLED": "1",
   },
   "customizations": {
     "zed": {
       "extensions": []
     }
-  }
+  },
 }

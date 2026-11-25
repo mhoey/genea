@@ -18,20 +18,28 @@
         <span>Genea Arkiv</span>
       </a>
 
-      <!-- Focus on Person Real-time Search -->
-      <div class="search-container">
-        <div class="search-input-wrapper">
-          <span class="search-icon">🔍</span>
-          <input
-            type="search"
-            id="focus-person-input"
-            class="search-input"
-            placeholder="Fokusér på person..."
-            autocomplete="off"
-            aria-label="Fokusér på person efter navn"
-          >
+      <!-- Unified Search, Selected Person & Quick Actions in Header -->
+      <div class="header-focus-group">
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input
+              type="search"
+              id="focus-person-input"
+              class="search-input"
+              placeholder="Fokusér på person..."
+              autocomplete="off"
+              aria-label="Fokusér på person efter navn"
+            >
+          </div>
+          <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
         </div>
-        <div id="search-results" class="search-results" role="region" aria-live="polite"></div>
+        <button id="btn-header-zoom-person" class="header-action-btn" title="Centrér og zoom ind på valgt person">
+          ⌖ Zoom til person
+        </button>
+        <button id="btn-header-person-details" class="header-action-btn header-action-btn-primary" title="Åbn biografi, tidslinje og relationer for valgt person">
+          Biografi &amp; detaljer
+        </button>
       </div>
 
       <!-- Header Actions: View Modes & Theme -->

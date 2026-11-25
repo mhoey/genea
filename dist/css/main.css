@@ -1,62 +1,70 @@
-/* main.css - Base typography, CSS custom properties, and layout shell */
+/* main.css - Base typography, genealogy parchment/brown color palette, and layout shell */
 
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Light Theme */
-  --bg-app: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #ffffff;
-  --border-color: #e2e8f0;
-  --border-color-subtle: #f1f5f9;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
+  /* Genealogy Light-Brown / Warm Parchment Base Theme */
+  --bg-app: #e6d7c3;
+  --bg-surface: #f7efe2;
+  --bg-surface-elevated: #fdfaf3;
+  --border-color: #bfa787;
+  --border-color-subtle: #dfd1bc;
+  --text-main: #281a0e;
+  --text-muted: #654b33;
+  --text-subtle: #886c51;
 
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-primary-subtle: #eff6ff;
+  /* High-Contrast Selection, Lineage & Icon Accents (Heritage Amber, Burnt Sienna & Deep Espresso) */
+  --color-primary: #b45309;
+  --color-primary-hover: #92400e;
+  --color-primary-subtle: #fef3c7;
+  --color-lineage-fill: #fffbeb;
+  --color-accent-icon: #78350f;
 
-  --color-male: #3b82f6;
-  --color-female: #ec4899;
-  --color-intersex: #8b5cf6;
-  --color-unknown: #64748b;
+  /* Subdued Archival Gender Indicators */
+  --color-male: #5b7c99;
+  --color-female: #a66a6a;
+  --color-intersex: #7e6b8f;
+  --color-unknown: #7d6e61;
 
-  --bg-generation-even: rgba(226, 232, 240, 0.45);
-  --bg-generation-odd: rgba(255, 255, 255, 0.5);
-  --border-generation: rgba(226, 232, 240, 0.7);
+  /* Generation Swimlanes */
+  --bg-generation-even: rgba(156, 120, 78, 0.22);
+  --bg-generation-odd: rgba(252, 247, 238, 0.62);
+  --border-generation: rgba(145, 112, 72, 0.42);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(54, 34, 14, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(54, 34, 14, 0.12), 0 2px 4px -2px rgba(54, 34, 14, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(54, 34, 14, 0.16), 0 4px 6px -4px rgba(54, 34, 14, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(54, 34, 14, 0.22), 0 8px 10px -6px rgba(54, 34, 14, 0.12);
 
   --header-height: 56px;
 }
 
 [data-theme="dark"] {
-  --bg-app: #090d16;
-  --bg-surface: #131b2e;
-  --bg-surface-elevated: #1a243d;
-  --border-color: #24324f;
-  --border-color-subtle: #19243c;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
+  /* Dark Archival Mahogany / Leather Theme */
+  --bg-app: #1c150f;
+  --bg-surface: #281e16;
+  --bg-surface-elevated: #33261c;
+  --border-color: #523e2e;
+  --border-color-subtle: #3d2e22;
+  --text-main: #f5ece0;
+  --text-muted: #c2aa90;
+  --text-subtle: #8f775f;
 
-  --color-primary: #3b82f6;
-  --color-primary-hover: #60a5fa;
-  --color-primary-subtle: #1e293b;
+  --color-primary: #f59e0b;
+  --color-primary-hover: #fbbf24;
+  --color-primary-subtle: #45270d;
+  --color-lineage-fill: #38220f;
+  --color-accent-icon: #f59e0b;
 
-  --bg-generation-even: rgba(255, 255, 255, 0.03);
-  --bg-generation-odd: transparent;
-  --border-generation: rgba(255, 255, 255, 0.05);
+  --bg-generation-even: rgba(214, 180, 138, 0.06);
+  --bg-generation-odd: rgba(0, 0, 0, 0.12);
+  --border-generation: rgba(214, 180, 138, 0.12);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.65);
 }
 
 *, *::before, *::after {
@@ -112,17 +120,59 @@ html, body {
   justify-content: center;
   width: 28px;
   height: 28px;
-  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
-  color: white;
+  background: linear-gradient(135deg, #b45309, #78350f);
+  color: #fffdf9;
   border-radius: 6px;
   font-size: 0.875rem;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Focus on Person Search Bar */
+/* Unified Focus on Person Search & Header Actions */
+.header-focus-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 660px;
+  margin: 0 1rem;
+}
+
 .search-container {
   position: relative;
-  width: 100%;
-  max-width: 380px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.header-action-btn {
+  height: 36px;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-main);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.header-action-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.header-action-btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.header-action-btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: #ffffff;
 }
 
 .search-input-wrapper {
@@ -137,22 +187,23 @@ html, body {
   padding: 0 1rem 0 2.25rem;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background-color: var(--bg-app);
+  background-color: var(--bg-surface-elevated);
   color: var(--text-main);
   font-size: 0.875rem;
+  font-weight: 500;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .search-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.2);
 }
 
 .search-icon {
   position: absolute;
   left: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-accent-icon);
   pointer-events: none;
   font-size: 0.875rem;
 }
@@ -196,12 +247,13 @@ html, body {
 }
 
 .search-result-item:hover,
-.search-result-item:focus {
+.search-result-item:focus,
+.search-result-item.active {
   background-color: var(--color-primary-subtle);
 }
 
 .result-name {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-main);
 }
 
@@ -238,20 +290,20 @@ html, body {
   padding: 0.35rem 0.65rem;
   border-radius: 6px;
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .view-btn.active {
-  background-color: var(--bg-surface);
-  color: var(--text-main);
+  background-color: var(--bg-surface-elevated);
+  color: var(--color-primary);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-icon {
-  background: transparent;
+  background: var(--bg-surface-elevated);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   width: 36px;
@@ -260,12 +312,13 @@ html, body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--text-main);
-  transition: background-color 0.15s ease;
+  color: var(--color-accent-icon);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-icon:hover {
   background-color: var(--border-color-subtle);
+  border-color: var(--color-accent-icon);
 }
 
 /* Main Viewport Container */
@@ -276,7 +329,7 @@ html, body {
   height: calc(100vh - var(--header-height));
   overflow: hidden;
   background-color: var(--bg-app);
-  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(120, 88, 54, 0.25) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

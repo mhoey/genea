@@ -78,7 +78,9 @@ export class ViewportControls {
       if (selectedId) {
         const pos = this.getNodePos(selectedId);
         if (pos) {
-          this.viewport.centerAt(pos.x + pos.width / 2, pos.y + pos.height / 2);
+          const curZoom = this.viewport.getZoomLevel();
+          const targetZoom = curZoom < 0.55 ? 0.85 : null;
+          this.viewport.centerAt(pos.x + pos.width / 2, pos.y + pos.height / 2, targetZoom);
         }
       }
     });
@@ -153,14 +155,25 @@ export class ViewportControls {
     const fullW = Math.max(bounds.width + margin * 2, 1);
     const fullH = Math.max(bounds.height + margin * 2, 1);
 
-    // Draw all node cards as dots/small boxes
-    ctx.fillStyle = '#64748b';
+    // Draw all node cards as dots/small boxes with warm archival & selection contrast
+    const selectedId = this.getSelectedPersonId ? this.getSelectedPersonId() : null;
     for (const node of this.allNodes) {
       const nx = ((node.x - fullMinX) / fullW) * w;
       const ny = ((node.y - fullMinY) / fullH) * h;
-      const nw = Math.max(2, (node.width / fullW) * w);
-      const nh = Math.max(2, (node.height / fullH) * h);
-      ctx.fillRect(nx, ny, nw, nh);
+      const nw = Math.max(3, (node.width / fullW) * w);
+      const nh = Math.max(3, (node.height / fullH) * h);
+      if (node.id === selectedId) {
+        ctx.fillStyle = '#fef3c7';
+        ctx.fillRect(nx - 2.5, ny - 2.5, nw + 5, nh + 5);
+        ctx.fillStyle = '#b45309';
+        ctx.fillRect(nx - 1.5, ny - 1.5, nw + 3, nh + 3);
+      } else {
+        const g = node.person?.gender || node.person?.sex;
+        if (g === 'male') ctx.fillStyle = '#6c88a1';
+        else if (g === 'female') ctx.fillStyle = '#b07b7b';
+        else ctx.fillStyle = '#856e59';
+        ctx.fillRect(nx, ny, nw, nh);
+      }
     }
 
     this.updateMinimapViewport();

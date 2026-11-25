@@ -51,16 +51,16 @@
   justify-content: center;
   border: 1px solid transparent;
   background-color: transparent;
-  color: var(--text-main);
+  color: var(--color-accent-icon);
   border-radius: 6px;
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .ctrl-btn:hover {
-  background-color: var(--border-color-subtle);
+  background-color: var(--color-primary-subtle);
   color: var(--color-primary);
 }
 
@@ -104,9 +104,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: 1.5px solid var(--color-primary);
-  background-color: rgba(37, 99, 235, 0.15);
-  border-radius: 2px;
+  border: 2px solid var(--color-primary);
+  background-color: rgba(180, 83, 9, 0.08);
+  border-radius: 3px;
   pointer-events: none;
   box-sizing: border-box;
 }

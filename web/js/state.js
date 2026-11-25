@@ -6,7 +6,7 @@ export class AppState {
   /**
    * @param {GraphStore} graphStore
    * @param {Object} options
-   * @param {Function} options.onSelectPerson - (personId, fromHashChange) => void
+   * @param {Function} options.onSelectPerson - (personId, fromHashChange, openModal) => void
    * @param {Function} options.onViewModeChange - (mode) => void
    * @param {Function} options.onFocusUniqueMatch - (personId) => void
    */
@@ -16,18 +16,44 @@ export class AppState {
 
     this.selectedPersonId = null;
     this.viewMode = 'network'; // 'network' or 'hourglass'
+    this._suppressNextHashChange = false;
+    this._searchInputEl = null;
 
     this._bindHashChange();
   }
 
   initFromHash() {
-    this._parseHash();
+    this._parseHash(false);
   }
 
   _bindHashChange() {
     window.addEventListener('hashchange', () => {
+      if (this._suppressNextHashChange) {
+        this._suppressNextHashChange = false;
+        return;
+      }
       this._parseHash(true);
     });
+  }
+
+  formatPersonLabel(person) {
+    if (!person) return '';
+    const name = this.graphStore.getDisplayName(person);
+    const by = this.graphStore.getBirthYear(person);
+    const dy = this.graphStore.getDeathYear(person);
+    if (by || dy) {
+      return `${name} (${by || '?'} – ${person.living ? 'Levende' : (dy || '?')})`;
+    }
+    return name;
+  }
+
+  syncInputWithSelectedPerson(force = false) {
+    if (!this._searchInputEl || !this.selectedPersonId) return;
+    if (!force && document.activeElement === this._searchInputEl) return;
+    const person = this.graphStore.getPerson(this.selectedPersonId);
+    if (person) {
+      this._searchInputEl.value = this.formatPersonLabel(person);
+    }
   }
 
   _parseHash(fromUserNav = false) {
@@ -47,12 +73,13 @@ export class AppState {
     }
 
     if (personId && this.graphStore.getPerson(personId)) {
+      const personChanged = this.selectedPersonId !== personId;
       this.selectedPersonId = personId;
-      if (this.options.onSelectPerson) {
-        this.options.onSelectPerson(personId, fromUserNav);
+      this.syncInputWithSelectedPerson();
+      if (this.options.onSelectPerson && (personChanged || !fromUserNav)) {
+        this.options.onSelectPerson(personId, fromUserNav, false);
       }
     } else if (!this.selectedPersonId) {
-      // Default to root person
       const def = this.graphStore.findDefaultRootPerson();
       if (def) {
         this.selectPerson(def.id, false, false);
@@ -64,12 +91,17 @@ export class AppState {
     if (!this.graphStore.getPerson(personId)) return;
 
     this.selectedPersonId = personId;
+    this.syncInputWithSelectedPerson();
 
     if (pushHistory) {
       const params = new URLSearchParams(window.location.hash.slice(1));
       params.set('person', personId);
       if (this.viewMode) params.set('view', this.viewMode);
-      window.location.hash = params.toString();
+      const nextHash = params.toString();
+      if (window.location.hash.slice(1) !== nextHash) {
+        this._suppressNextHashChange = true;
+        window.location.hash = nextHash;
+      }
     }
 
     if (this.options.onSelectPerson) {
@@ -84,7 +116,11 @@ export class AppState {
     const params = new URLSearchParams(window.location.hash.slice(1));
     if (this.selectedPersonId) params.set('person', this.selectedPersonId);
     params.set('view', mode);
-    window.location.hash = params.toString();
+    const nextHash = params.toString();
+    if (window.location.hash.slice(1) !== nextHash) {
+      this._suppressNextHashChange = true;
+      window.location.hash = nextHash;
+    }
 
     if (this.options.onViewModeChange) {
       this.options.onViewModeChange(mode);
@@ -93,12 +129,13 @@ export class AppState {
 
   /**
    * Binds the "Focus on Person" search input and dropdown.
-   * Handles real-time search and automatic navigation on unique match.
+   * Displays the currently selected person when idle, and searches in real time when typing.
    * @param {HTMLInputElement} inputEl
    * @param {HTMLElement} resultsContainerEl
    */
   bindFocusPersonInput(inputEl, resultsContainerEl) {
     if (!inputEl || !resultsContainerEl) return;
+    this._searchInputEl = inputEl;
 
     let debounceTimer = null;
 
@@ -113,7 +150,6 @@ export class AppState {
 
       const matches = this.graphStore.searchPeople(query);
 
-      // Section 5.2 / Section 6.1: Automatic Navigation on Unique Match
       if (matches.length === 1) {
         const uniqueMatch = matches[0];
         if (this.options.onFocusUniqueMatch) {
@@ -131,7 +167,7 @@ export class AppState {
       }
 
       const list = createHTML('ul', { className: 'search-results-list' });
-      for (const p of matches.slice(0, 10)) {
+      for (const p of matches.slice(0, 12)) {
         const name = this.graphStore.getDisplayName(p);
         const birthYear = this.graphStore.getBirthYear(p);
         const deathYear = this.graphStore.getDeathYear(p);
@@ -141,7 +177,7 @@ export class AppState {
         }
 
         const li = createHTML('li', {
-          className: 'search-result-item',
+          className: `search-result-item ${p.id === this.selectedPersonId ? 'active' : ''}`,
           role: 'button',
           tabindex: '0'
         }, [
@@ -150,9 +186,12 @@ export class AppState {
         ]);
 
         li.addEventListener('click', () => {
-          inputEl.value = name;
           resultsContainerEl.classList.remove('active');
-          this.selectPerson(p.id, true);
+          this.selectPerson(p.id, false);
+          this.syncInputWithSelectedPerson(true);
+          if (this.options.onFocusUniqueMatch) {
+            this.options.onFocusUniqueMatch(p.id);
+          }
         });
 
         list.appendChild(li);
@@ -168,20 +207,29 @@ export class AppState {
     });
 
     inputEl.addEventListener('focus', () => {
-      if (inputEl.value.trim()) {
-        performSearch();
-      }
+      inputEl.select();
+    });
+
+    inputEl.addEventListener('blur', () => {
+      setTimeout(() => {
+        if (!resultsContainerEl.classList.contains('active')) {
+          this.syncInputWithSelectedPerson(true);
+        }
+      }, 150);
     });
 
     document.addEventListener('click', (e) => {
       if (!inputEl.contains(e.target) && !resultsContainerEl.contains(e.target)) {
         resultsContainerEl.classList.remove('active');
+        this.syncInputWithSelectedPerson();
       }
     });
 
     inputEl.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         resultsContainerEl.classList.remove('active');
+        this.syncInputWithSelectedPerson(true);
+        inputEl.blur();
       }
     });
   }

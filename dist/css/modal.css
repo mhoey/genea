@@ -79,26 +79,26 @@
 
 .badge.gender-male,
 .badge.sex-male {
-  background-color: rgba(59, 130, 246, 0.15);
-  color: #2563eb;
+  background-color: rgba(91, 124, 153, 0.16);
+  color: #47647d;
 }
 
 .badge.gender-female,
 .badge.sex-female {
-  background-color: rgba(236, 72, 153, 0.15);
-  color: #db2777;
+  background-color: rgba(166, 106, 106, 0.16);
+  color: #8c5454;
 }
 
 .badge.gender-intersex,
 .badge.sex-intersex {
-  background-color: rgba(139, 92, 246, 0.15);
-  color: #7c3aed;
+  background-color: rgba(126, 107, 143, 0.16);
+  color: #685678;
 }
 
 .badge.gender-unknown,
 .badge.sex-unknown {
-  background-color: rgba(100, 116, 139, 0.15);
-  color: #475569;
+  background-color: rgba(125, 110, 97, 0.16);
+  color: #63564b;
 }
 
 .badge.status-living {
